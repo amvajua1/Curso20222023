@@ -73,3 +73,97 @@ Teniendo esto en cuenta, los patrones para una propiedad y para un recurso espec
 
 * Patrón para términos ontológicos: http://ejemplo-sensores-ambientales.es/ayto-santander/ontology/sensores#hasTemperatura. 
 * Patrón para individuos: http://ejemplo-sensores-ambientales.es/ayto-santander/resource/sensor/382.
+
+
+### 2.4. Desarrollo del vocabulario
+
+Se muestra a continuación la relación existente entre cada uno de los vocabularios y propiedades presentes en nuestro dataset.
+
+
+Recursos principales:
+
+
+* Identificador del sensor
+* Ubicación (coordenadas de latitud y longitud)
+* Fecha de medición
+* Tipo de medición (ruido o tiempo)
+* Mediciones (temperatura, niveles de luz y ruido)
+* Nivel de batería del sensor
+
+Propiedades y relaciones entre recursos: 
+
+* Cada sensor tiene una ubicación dada por su latitud y longitud
+* Cada sensor recoge una medición en un día y hora determinados
+* Cada sensor puede recoger medidas del nivel de ruido
+* Las unidades de medida del nivel de ruido son dB
+* Cada sensor puede recoger medidas del tiempo atmosférico o clima
+* Las unidades de medida de la temperatura y nivel de luz son grados Celsius y lúmenes respectivamente
+* Cada sensor tiene un nivel de batería
+* Las unidades de medida del nivel de batería son tantos por ciento.
+
+Por otra parte, dado que el CSV seleccionado no presenta columnas que puedan ser objeto de enlazado y todos los registros recogidos en dataset pertenecen al Ayuntamiento de Santander, se procede a crear una nueva columna llamada *Municipio* con valor *Santander*. Con este cambio cuya implementación se llevará a cabo en el apartado siguiente, podemos añadir el recurso principal *Municipio* y la propiedad *Todos los sensores se encuentran en el mismo municipio o ciudad*.
+
+
+Se muestra a continuación el modelo ontológico basado en los recursos principales y propiedades anteriormente descritos:
+
+
+![](Imagenes/mapa-ontologico.png)
+
+
+Para finalizar con teste apartado, mencionar que se hará uso de ontologías ya existentes. Concretamente, se utilizarán las propiedades geo:lat y geo:long del vocabulario *WGS84 (wsg84_pos:SpatialThing)* para describir las coordenadas geográficas de nuestro dataset así como Wikidata para describir la clase sensor. El municipio o ciudad será descrito mediante la propiedad schema: City del vocabulario *Schema org*.
+
+
+### 2.5. Proceso de transformación
+
+Para el desarrollo de esta práctica se ha hecho uso de la versión 3.7.2 de la herramienta *OpenRefine* que junto con la *extensión RDF* nos ha permitido transformar un archivo CSV en otro RDF, compuesto de datos enlazados. 
+
+
+Para llegar a dicho punto, se han llevado a cabo una serie de transformaciones en nuestro dataset de origen y cuyo comienzo ha consistido en la carga del mismo en la herramienta tal y como mostramos a continuación:
+
+
+![](Imagenes/carga-inicial.png)
+
+
+El dataset seleccionado está compuesto por un total de 10 atributos y 332 registros. A priori, se observa que los valores de columna de cada atributo no son del todo descriptivos por lo que cambiaremos sus nombres a otros que lo sean más haciendo uso de la opción *Edit column => Remane this column* presente en cada atributo. A continuación, se muestran los cambios llevados a cabo:
+
+
+| Nombre en CSV | Renombrado |
+| ------------- | ------------- |
+| dc:identifier | Id |
+| dc:modified |  Fecha |
+| ayto: type | TipoMedicición  |
+| ayto:latitude | Latitud |
+| ayto:longitude  | Longitud |
+| ayto:temperatura | Temperatura |
+| ayto:battery | Bateria |
+| ayto:light | NivelLuz |
+| ayto:noise | NivelRuido |
+| uri | Uri |
+
+
+Por otra parte, se convierten a número los atributos *ayto:latitude*, *ayto:longitude*, *ayto:temperatura*, *ayto:light* y *ayto:noise* y *ayto:modified* a fecha.
+
+![](Imagenes/renombrado-columnas.png)
+
+
+Así mismo, en el apartado anterior, se mencionó que se iba a añadir una nueva columna a nuestro dataset llamada *Municipio* para poder tener al menos un atributo con el que poder realizar enlazamiento en el apartado 2.5. Esta columna, la añadiremos entre los atributos *NivelRuido* y *Uri* y se llamará *Municipio*. Se creará mediante la opción *Edit column => Add column base on this column* de *OpenRefine* y posteriormente, mediante expresiones GREL estableceremos el valor *Santander*. A continuación, se muestra el resultado final obtenido:
+
+
+![](Imagenes/columna-municipio-grel.png)
+
+![](Imagenes/columna-municipio.png)
+
+
+Haciendo uso de las facetas sobre cada uno de los atributos podemos conocer cómo se distribuyen los datos y sacar conclusiones en consecuencia. A continuación, se describen las conclusiones extraídas: 
+
+
+* El campo *Id* será el que utilizaremos para identificar a cada individuo y construir las URIs de cada recurso ya que se ha comprobado que los valores son únicos.
+* El atributo *Batería* no contiene ningún dato para ningún registro y por tanto no aporta valor alguno por lo que se procederá a su eliminación haciendo uso de la opción *Edit column => Remove this column*.
+* El atributo *Uri* representa la ruta de cada individuo dada por el portal. Dado que dicha información se puede visualizar en el dataset para todos los individuos, dicho campo se considera redundante y se decide prescindir de él.
+
+Con las transformaciones anteriormente descritas, el dataset limpio con el que trabajaremos será el siguiente:
+
+
+![](Imagenes/csv-original-limpio-y-transformado.png)
+
+
