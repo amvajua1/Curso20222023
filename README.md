@@ -1,32 +1,75 @@
-Curso 2022-2023
-================
 
-Este es el repositorio que utilizaremos para nuestro trabajo colaborativo, y para llevar a cabo las entregas de la asignatura. Recuerda que tienes instrucciones mas detalladas sobre el trabajo [aquí](https://docs.google.com/document/d/e/2PACX-1vQrfa6nrN-4nbLWARcyWrY5AxN9lbwRMbT9OuwGHTSXwfQUN5ak7a945mgsuqt7QSPZ5fvYUbh_oZQk/pub)
+# Web semántica y datos enlazados
 
-A nivel técnico, este es el proceso normal que el alumno tendrá que seguir:
+Se presenta a continuación el índice seguido para el desarrollo de la práctica:
 
-* Realizar un Fork al repositorio principal en tu propia cuenta (esto generará un nuevo repositorio en tu cuenta de GitHub). Este paso se realiza solo una vez en el curso. En este repositorio deberás crear un directorio con tu nombre, donde estarán los documentos y datos de tu trabajo.
 
-* Si ya has realizado el fork sobre este repositorio, deberás sincronizar tu repositorio con la versión actual. Para ello debes [configurar un remote para el fork](https://help.github.com/articles/configuring-a-remote-for-a-fork) y [sincronizar tu fork](https://help.github.com/articles/syncing-a-fork). Básicamente debe:
- * Establece el remote: 
- 
-        git remote add upstream https://github.com/AEPIA-WebSemanticaDatosEnlazados/Curso20222023
+1. Introducción
+2. Proceso de transformación:
+	* Selección de la fuente de datos.
+	* Análisis de los datos.
+	* Estrategia de nombrado
+	* Desarrollo del vocabulario.
+	* Transformación de datos
+	* Enlazado
+	* Publicación.
+3. Aplicación y explotación.
+4. Conclusiones.
+5. Bibliografía.
 
- * Recuperar cualquier cambio hecho en él: 
- 
-        git fetch upstream
- 
- * Realizar un checkout de la rama principal en local del fork: 
- 
-        git checkout master
- 
- * Hacer un merge de los cambios desde el remote en su rama principal: 
- 
-        git merge upstream/master
 
-* Realizar cambios en el repositorio.
-* Hacer commit de los cambios en el repositorio local
-* Hacer push de los cambios al repositorio online de cada alumno.
-* Hacer un pull request, de tal forma que los cambios puedan ser aceptados e incorporados en el repositorio general
+## 1. Introducción
 
-Cada alumno creará un directorio dentro del proyecto, usando su nombre y apellidos, e incluirá en dicho directorio todos los documentos relativos a su trabajo. De cara a evitar problemas de gestión, ningún alumno deberá modificar el contenido del trabajo de otro alumno. Las contribuciones mediante comentarios o issues en github y/o en el foto de la asignatura son bienvenidas.
+En esta tarea se pide poner en práctica los conocimientos adquiridos a lo largo de la asignatura transformando un dataset en formato CSV de nuestra elección a datos enlazados.
+
+Para ello, se ha seleccionado un dataset del portal de datos abiertos del Ayuntamiento de Santander que, con la ayuda de sensores distribuidos por la ciudad, recopilan datos relativos al nivel de ruido, luminosidad y temperatura.
+
+## 2. Proceso de transformación
+
+A lo largo de este apartado se llevarán a cabo cada una de las transformaciones necesarias para conseguir nuestro archivo RDF a partir de nuestro CSV de origen. 
+
+
+### 2.1. Selección de la fuente de datos
+
+Como se ha mencionado en el apartado de introducción, el CSV de origen, *Sensores ambientales*, se ha obtenido de la página del [portal de datos abiertos del Ayuntamiento de Santander](http://datos.santander.es/resource/?ds=sensores-ambientales&id=cae57038-c092-4743-b575-7bcafd838e02&ft=CSV).  
+
+
+De entre toda la información a la que el ciudadano tiene acceso en dicho portal, he seleccionado este dataset en concreto para realizar la tarea debido a que me parece interesante la información recogida por los sensores ya que por ejemplo pueden ayudar a un ciudadano a encontrar la mejor zona para comprarse una vivienda en la ciudad. 
+
+
+### 2.2. Análisis de los datos
+
+El CSV seleccionado para la tarea tiene una licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es), es decir, podemos utilizar el dataset seleccionado para lo que deseemos, e incluso llegar a hacer modificaciones en el mismo siempre y cuando citemos al autor. Teniéndose esto en cuenta, se llevarán a cabo las transformaciones pertinentes manteniéndose la misma licencia para los datos transformados.
+
+
+Se detallan a continuación cada una de las variables que componen el dataset:
+
+| Columna | Tipo | Comentarios |
+| ------------- | ------------- | -------------|
+| dc:identifier | String | Identificador del registro
+| dc:modified | String | Fecha y hora en que se tomó el registro expresada según el estándar ISO 8601
+| ayto:type | String | Tipo de registro que el sensor va a medir. Toma dos valores posibles *NoiseLevelObserved* para las medidas del nivel de ruido y *WeatherLevelObserved* para las medidas de temperatura y nivel de luminosidad.
+| ayto:latitude | String | Coordenadas de latitud que ubican al sensor
+| ayto:longitude | String | Coordenadas de longitud que ubican al sensor
+| ayto:temperature | String | Temperatura registrada por el sensor medida en grados Celsius. Solamente hay dato de este campo para el tipo *WeatherLevelObserved*. Presenta tres registros con temperaturas anómalas: 228.77 ºC, -39.09 ºC y -36.58ºC.
+| ayto:battery | String | Nivel de batería del sensor medido en %. No presenta ningun valor para ningun registro
+| ayto:light | String | Luminosidad registrada por el sensor medida en lúmenes. Solamente hay dato de este campo para el tipo *WeatherLevelObserved*. 
+| ayto:noise | String | Nivel de ruido registrado por el sensor medido en dB. Solamente hay dato de este campo para el tipo *NoiseLevelObserved*.
+| uri | String | URL que permite descargar un resumen de la información presente en el CSV para un registro concreto.
+
+
+### 2.3. Estrategia de nombrado
+
+Para seleccionar la estrategia de nombrado de los recursos haremos uso de # y /. Concretamente, utilizaremos el hash URIs (#) para los términos ontológicos y dado que el CSV seleccionado aporta información relativa a medidas recogidas por varios sensores, usaremos el slash URIs (/) para acceder a la información de cada una de las observaciones tal y como se describe a continuación:
+
+
+* Dominio: http://ejemplo-sensores-ambientales.es/.
+* Ruta para términos ontológicos: http://ejemplo-sensores-ambientales.es/ayto-santander/ontology/sensores#.
+* Ruta para individuos: http://ejemplo-sensores-ambientales.es/ayto-santander/resource/ .
+
+
+Teniendo esto en cuenta, los patrones para una propiedad y para un recurso específico de nuestro dataset serán:
+
+
+* Patrón para términos ontológicos: http://ejemplo-sensores-ambientales.es/ayto-santander/ontology/sensores#hasTemperatura. 
+* Patrón para individuos: http://ejemplo-sensores-ambientales.es/ayto-santander/resource/sensor/382.
