@@ -6,16 +6,16 @@ Se presenta a continuación el índice seguido para el desarrollo de la práctic
 
 1. Introducción
 2. Proceso de transformación:
-	* Selección de la fuente de datos.
-	* Análisis de los datos.
+	* Selección de la fuente de datos
+	* Análisis de los datos
 	* Estrategia de nombrado
-	* Desarrollo del vocabulario.
+	* Desarrollo del vocabulario
 	* Transformación de datos
 	* Enlazado
-	* Publicación.
-3. Aplicación y explotación.
-4. Conclusiones.
-5. Bibliografía.
+	* Publicación
+3. Aplicación y explotación
+4. Conclusiones
+5. Bibliografía
 
 
 ## 1. Introducción
@@ -165,5 +165,46 @@ Con las transformaciones anteriormente descritas, el dataset limpio con el que t
 
 
 ![](Imagenes/csv-original-limpio-y-transformado.png)
+
+
+Luego, se llevará a cabo la correspondencia o mapping entre esta tabla de datos recién generada y la ontología, lo que posibilitará la asignación de nombres a todas las instancias contenidas en el conjunto de datos, siguiendo la estrategia de nombrado establecida.
+
+
+Teniéndose esto en cuenta, comenzamos la construcción del esqueleto RDF introduciendo en la opción *Add* nuestra estrategia de nombrado de recursos, es decir, la URI que hemos creado para definir nuestra ontología (véase apartado 2.3). Dado que ésta no está publicada, para evitar errores en su utilización forzamos su importación.
+
+
+![](Imagenes/introduccion-ontologia.png)
+
+
+Así mismo, dado que comentamos en apartados anteriores que íbamos a hacer uso de ontologías ya existentes se muestran a continuación qué prefijos hemos utilizado para cada una de ellas:
+
+
+* geo para la ontología http://www.w3.org/2003/01/geo/wgs84_pos#
+* dbpedia para la ontología  http://dbpedia.org/resource/
+* schema para la ontología http://schema.org/
+
+
+Posteriormente, identificamos a los individuos por su tipo (dbpedia:sensor) y su URI. Con respecto a la URI de cada individuo hay que tener en cuenta que hemos de editar la URI que viene por defecto (http://127.0.0.1:3333/) e introducir la que se ha definido con anterioridad (véase apartado 2.3).
+
+
+![](Imagenes/introduccion-uri-base-individuos.png)
+
+
+Como hemos identificado a los individuos con el tipo dbpedia:sensor, lo siguiente que hemos de hacer es construir la URI para cada uno de ellos haciéndose uso de la URI base y las expresiones GREL tal y como sigue:
+
+
+![](Imagenes/construccion-uri-cada-individuo.png)
+
+
+Finalmente, para terminar con la construcción del esqueleto RDF, introducimos las propiedades asociadas a cada individuo. El resultado final se muestra a continuación:
+
+
+![](Imagenes/esquema-RDF-pre-enlazado.png)
+
+
+Con el esqueleto RDF ya construido procedemos a su exportación RDF tal y como puede verse a continuación:
+
+
+![](Imagenes/csv-datos-enlazados.png)
 
 
