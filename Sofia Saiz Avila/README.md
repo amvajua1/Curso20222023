@@ -219,7 +219,7 @@ Dado que dicho campo contiene el nombre de una ciudad se enlazará con la ontolo
 Para llevar a cabo el proceso de enlazado hacemos uso de la herramienta *OpenRefine* siguiendo los pasos siguientes: 
 
 
-* Añadimos el servicio de reconciliación basado en SPARQL endpoint que posteriormente nos permitirá ejecutar consultas sobre nuestros datos.
+* Añadimos el servicio de reconciliación basado en SPARQL endpoint.
 * Reconciliamos la columna *Municipio* mediante el servicio *Wikidata reconci.link (en)*.
 * Creamos en nuestro dataset la columna *UriMunicipio* para haciendo uso de la expresión GREL ```http://www.wikidata.org/entity/"+cell.recon.match.id``` mostrar el resultado de la reconciliación. 
 * Editamos el esqueleto RDF para añadir la propiedad owl:sameAs y poder indicar que el individuo de nuestro dataset es el mismo que el encontrado en *Wikidata*.
