@@ -208,3 +208,122 @@ Con el esqueleto RDF ya construido procedemos a su exportación RDF tal y como p
 ![](Imagenes/csv-datos-enlazados.png)
 
 
+### 2.6. Enlazado
+
+Como se ha explicado en apartados anteriores, el dataset original no contenía información adecuada para enlazar con otras ontologías. Es por ello, que se añadió el campo *Municipio*, que, si bien aporta información redundante a nuestro CSV al pertenecer todos los registros al municipio de Santander, ha sido necesario para la elaboración de este apartado de la tarea.
+
+
+Dado que dicho campo contiene el nombre de una ciudad se enlazará con la ontología *Wikidata*. 
+
+
+Para llevar a cabo el proceso de enlazado hacemos uso de la herramienta *OpenRefine* siguiendo los pasos siguientes: 
+
+
+* Añadimos el servicio de reconciliación basado en SPARQL endpoint.
+* Reconciliamos la columna *Municipio* mediante el servicio *Wikidata reconci.link (en)*.
+* Creamos en nuestro dataset la columna *UriMunicipio* para haciendo uso de la expresión GREL ```http://www.wikidata.org/entity/"+cell.recon.match.id``` mostrar el resultado de la reconciliación. 
+* Editamos el esqueleto RDF para añadir la propiedad owl:sameAs y poder indicar que el individuo de nuestro dataset es el mismo que el encontrado en *Wikidata*.
+
+
+A continuación, se muestra mediante capturas de pantalla cada uno de los pasos anteriormente descritos:
+
+
+![](Imagenes/enlazado-seleccion-servicio-reconciliacion.png)
+
+
+![](Imagenes/enlazado-seleccion-tipo.png)
+
+
+![](Imagenes/enlazado-construccion-uri.png)
+
+
+![](Imagenes/enlazado-resultado-final.png)
+
+
+Dado que todos los registros tenían el mismo valor, la reconciliación llevada a cabo ha sido del 100%. 
+
+
+Finalmente, cabe señalar que para la edición del esqueleto RDF se ha renombrado la columna *UriMunicipio* por *WikidataMunicipio*.
+
+
+![](Imagenes/esquema-RDF-post-enlazado.png)
+
+
+### 2.7. Publicación
+
+Dado que el archivo de datos no se encuentra actualizado (las últimas mediciones tomadas por el sensor datan del 27 de agosto del 2021) se ha optado por no publicar la ontología propia creada a partir de dicho CSV.
+
+
+## 3. Aplicación y explotación
+
+Una vez tenemos el CSV convertido a datos RDF podemos hacer consultas complejas haciendo uso de SPARQL. Para ello, se ha hecho uso de [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/), un servidor de SPARQL de código abierto que proporciona una interfaz web sencilla sobra la cual hacer consultas a un dataset previamente cargado. Algunos ejemplos de consultas se muestran a continuación:
+
+
+* Consulta 1: Obtener las coordenadas relativas al registro con identificador 483
+
+```  
+PREFIX dbpedia: <http://dbpedia.org/resource/>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX schema: <http://schema.org/>
+PREFIX onto: <http://ejemplo-sensores-ambientales.es/ayto-santander/ontology/sensores#>
+
+SELECT ?sensor ?lat ?long ?tipoMedicion ?id
+WHERE {
+    ?sensor a dbpedia:sensor ;
+		onto:hasId ?id ;
+		geo:lat ?lat ;
+		geo:long ?long ;
+		onto:hasTipoMedicion ?tipoMedicion .
+		FILTER (?id = "483"^^<http://www.w3.org/2001/XMLSchema#int>)
+}
+```
+
+![](Imagenes/consulta-1-resultado.png)
+
+
+* Consulta 2: Obtener el nivel de ruido promedio registrado por los sensores 
+
+```
+PREFIX onto: <http://ejemplo-sensores-ambientales.es/ayto-santander/ontology/sensores#>
+
+SELECT (AVG(?ruido) AS ?promedioRuido)
+WHERE {
+  ?sensor onto:hasRuido ?ruido .
+}
+```
+![](Imagenes/consulta-2-resultado.png)
+
+
+* Consulta 3: Obtener la temperatura máxima registrada junto con la fecha y hora en que se produjo
+
+```
+PREFIX onto: <http://ejemplo-sensores-ambientales.es/ayto-santander/ontology/sensores#>
+
+SELECT ?temperatura ?fecha
+WHERE {
+    ?sensor onto:hasTemperatura ?temperatura ;
+            onto:hasFecha ?fecha .
+}
+ORDER BY DESC(?temperatura)
+LIMIT 1
+```
+
+![](Imagenes/consulta-3-resultado.png)
+
+
+* Consulta 4: Obtener el histórico de registros de los niveles de luz registrados por los sensores ordenados de manera descendente por su valor
+
+```
+PREFIX onto: <http://ejemplo-sensores-ambientales.es/ayto-santander/ontology/sensores#>
+
+SELECT ?sensor ?nivelLuz ?fecha
+WHERE {
+    ?sensor onto:hasLuz ?nivelLuz ;
+            onto:hasFecha ?fecha .
+}
+ORDER BY DESC(?nivelLuz)
+```
+
+![](Imagenes/consulta-4-resultado.png)
+
+
