@@ -24,7 +24,7 @@ Para llevar a cabo el proceso de transformación de los datos en formato csv a d
 
 ### 2.1. Selección de la fuente de datos
 
-Los datos seleccionados se han descargado de la web _[Iniciativa de datos abiertos del Gobierno de España](https://datos.gob.es)_, se trata de una web del gobierno de España, del ministerio de asuntos económicos y transformación digital para la reutilización de información pública. Concretamente se han descargado del catálogo de datos, el conjunto de datos _[Certificaciones energéticas](https://datos.gob.es/es/catalogo/a15002917-certificaciones-energeticas)_. El publicador de los datos es la [Comunidad Foral de Navarra](https://datos.gob.es/es/catalogo?publisher_display_name=Comunidad+Foral+de+Navarra). El por qué de la selección de dichos datos, ha sido por el hecho de ser información muy útil para el usuario a la hora de comprar o alquilar una vivienda y porque cumplen los requisios para su selección: escenario real, datos disponibles, formato procesable automáticamente e csv y posibilidad de enlazar con entidades genéricas.
+Los datos seleccionados se han descargado de la web _[Iniciativa de datos abiertos del Gobierno de España](https://datos.gob.es)_, se trata de una web del gobierno de España, del ministerio de asuntos económicos y transformación digital para la reutilización de información pública. Concretamente se han descargado del catálogo de datos, el conjunto de datos _[Certificaciones energéticas](https://datos.gob.es/es/catalogo/a15002917-certificaciones-energeticas)_. El publicador de los datos es la [Comunidad Foral de Navarra](https://datos.gob.es/es/catalogo?publisher_display_name=Comunidad+Foral+de+Navarra). El por qué de la selección de dichos datos, ha sido por el hecho de ser información muy útil para el usuario a la hora de comprar o alquilar una vivienda y porque cumplen los requisios para su selección: escenario real, datos disponibles, formato procesable automáticamente en csv y posibilidad de enlazar con entidades genéricas.
 
 De acuerdo con la página web citada, se describen los datos como:
 
@@ -109,11 +109,20 @@ La frecuencia de actualización de los datos es diaria, por lo que en la descarg
 |CalificacionEmiCO2ACS|string|calificación en emisiones CO2 en ACS|contiene vacíos;un char(1)|
 |CalificacionEmiCO2Iluminacion|string|calificación en emisiones CO2 en iluminación|contiene vacíos; char(1)|
 
-
-
 ### 2.3. Estrategia de nombrado
 
+Se define la estragia de nombrado tanto para recursos Web como entidades fuera de la Web. Son clave en los datos enlazados y se identifican mediante URIs persistentes. A continuación se define la estrategia de nombrado de recursos:
 
+* Elección de la forma de las URIs:
+  - Se utiliza el símbolo hash '#' para la redirección a un documento, con acceso completo a los datos. Y el símbolo slash '/' para la identificación de recursos que son dinámicos.
+* Elección del dominio de las URIs:
+  - Dominio: http//CEE.es/ 
+* Elección ruta de las URIs:
+  - Ruta para términos ontológicos: http//CEE.es/datosgob/ontology/CerificacionEnergeticaEdificio#
+  - Ruta para individuos: http//CEE.es/datosgob/resource/
+* Elección patrones para clases, propiedades e individuos:
+  - Patrón para términos ontológicos: http//CEE.es/datosgob/ontology/CerificacionEnergeticaEdificio#tieneValorCalificacion
+  - Patrón para individuos: http//CEE.es/datosgob/resource/CodEdificio/127475
 
 ### 2.4. Desarrollo del vocabulario
 
