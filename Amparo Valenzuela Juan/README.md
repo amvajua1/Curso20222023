@@ -53,7 +53,7 @@ La frecuencia de actualización de los datos es diaria, por lo que en la descarg
 |AnioConstruccion|integer|anyo de construcción del edificio|contiene vacíos, datos en string, y anyos ilógicos|
 |NormativaVigente|string|normativa vigente|contiene vacíos, datos ilógicos|
 |ReferenciaCatastral|string|referencia catastral|contiene vacíos|
-|TipoDeEdificio|string|tipo del edificio|contiene vacíos, datos con valor -1|
+|TipoDeEdificio|string|tipo del vivienda|contiene vacíos, datos con valor -1|
 |Procedimiento|string|procedimiento certificación|contiene vacíos|
 |Fecha|date|fecha edificación|contiene vacíos|
 |SuperficieHabitable|numeric|superficie habitable de la vivienda|no hay datos|
@@ -86,9 +86,9 @@ La frecuencia de actualización de los datos es diaria, por lo que en la descarg
 |BiomasaPellet|string|biomasa pellet|contiene vacíos; conjunto datos clasificados con Global: ;Calefacción: ;Refrigeración: ;ACS: ;Iluminación:|
 |BiomasaOtros|string|biomasa otros|contiene vacíos; conjunto datos clasificados con Global: ;Calefacción: ;Refrigeración: ;ACS: ;Iluminación:|
 |ElectricidadPeninsular|string|electricidad en la Península|contiene vacíos; conjunto datos clasificados con Global: ;Calefacción: ;Refrigeración: ;ACS: ;Iluminación:|
-|ElectricidadBaleares|string|electicidad en Baleares|contiene vacíos; conjunto datos clasificados con Global: ;Calefacción: ;Refrigeración: ;ACS: ;Iluminación:|
-|ElectricidadCanarias|string|electricidad en Canarias|contiene vacíos; conjunto datos clasificados con Global: ;Calefacción: ;Refrigeración: ;ACS: ;Iluminación:|
-|ElectricidadCeutayMelilla|string|electricidad en Ceuta y Melilla|contiene vacíos; conjunto datos clasificados con Global: ;Calefacción: ;Refrigeración: ;ACS: ;Iluminación:|
+|ElectricidadBaleares|string|electicidad en Baleares|no hay datos|
+|ElectricidadCanarias|string|electricidad en Canarias|no hay datos|
+|ElectricidadCeutayMelilla|string|electricidad en Ceuta y Melilla|no hay datos|
 |Biocarburante|string|biocarburante|contiene vacíos; conjunto datos clasificados con Global: ;Calefacción: ;Refrigeración: ;ACS: ;Iluminación:|
 |EnergiaPrimNoRenovable|string|energía prima no renovable|contiene vacíos; conjunto datos clasificados con Global: ;Calefacción: ;Refrigeración: ;ACS: ;Iluminación:|
 |EmisionesCO2|string|emisiones CO2|contiene vacíos; conjunto datos clasificados con Global: ;Calefacción: ;Refrigeración: ;ACS: ;Iluminación: ;Cons.Eléctrico:;Cons.Otros:;Tot.Cons.Electrico:;Tot.Cons.Otros: |
@@ -126,8 +126,51 @@ Se define la estragia de nombrado tanto para recursos Web como entidades fuera d
 
 ### 2.4. Desarrollo del vocabulario
 
+El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacerla demasiado extensa. En primer lugar se define la especificación de requisitos que satisface los requisitos no funcionales y funcionales:
+* Especificación de requisitos:
+   - Requisitos no funcionales:
+      - El idioma de la ontología deberá ser en inglés por ser idioma universal, y en español por enfocarse la ontología en la certificación energética en España.
+      - Escalable, de forma que podrá incorporar nueva información relacionada con la certificación energética en edificios, tales como: nuevas normativas en la certificación, nuevas califaciones o procedimientos.
+   - Requisitos funcionales:
+      - Se refieren al conocimiento que debe representar la ontología, que haciendo uso de la metodología de NeOn, se basa en Preguntas por Competencia (PC):
+        
+      |Identificador|Pregunta Competecia|Posible respuestas|                  
+      | --- | --- | --- |
+      |PC1|¿Tipo de edificio?|Edificio: existente, terminado, proyecto, nuevo proyecto, nuevo terminado, terminado, reformado/ampliación (proyecto), reformado/ampliación (terminado)|
+      |PC2|¿Código registro comunidad autónoma?|2023/822297|
+      |PC3|¿Anyo construcción?|1993|
+      |PC4|¿Normativa vigente?|NBE-CT-79|
+      |PC5|¿Tipo de vivienda?|alquiler, compra-venta|
+      |PC6|¿Procedimiento que aplica?|CE3X|
+      |PC7|¿Generadores Calefacción?|Nombre: Caldera Individual Gas;Tipo: Caldera Estándar; Pot.Nominal: 24.00; RendimientoEst.: 0.62; Vec.Energetico: GasNatural; ModoObtencion: Estimado |
+      |PC8|¿Generadores Refrigeración?|Nombre: ;Tipo: ; Pot.Nominal: 0; RendimientoEst.: 0; Vec.Energetico: ; ModoObtencion:  |
+      |PC9|¿Instalación?|Nombre: Caldera Individual Gas;Tipo: Caldera Estándar; Pot.Nominal: 24.00; RendimientoEst.: 0.62; Vec.Energetico: GasNatural; ModoObtencion: Estimado |  
+      |PC10|¿Sistemas Térmicos?|Nombre: ;Cons.Fin.Calefaccion: 0; Cons.Fin.Refrigeracion: 0; Cons.Fin.ACS.: 0; DemandaACS: 0 |
+      |PC11|¿Sistemas eléctricos?|Nombre: ;Ener.Gen.Autoconsumida: 0 |
+     
+* Extracción de términos:
+   - Se extrae terminología relacionada con la certificación energética en edificios para su mejor entendimiento:  
 
+      |Término|Concepto|Sinónimo|                  
+      | --- | --- | --- |
+      |Generador|Productor|
+      |Sistema térmico|Estructura de calor|
+      |Sistema eléctrico|Estructura eléctrica|
+      |Gas natural|Metano|
+      |Gas C|Gasóleo de calefacción|
+      |GLP|Gas licuado de petróleo|
+      |Biomasa|Bioenergía|
+      |Biocarburante|Biocombustible|
+      |ACS|Agua caliente sanitaria|
+    
+* Conceptualización:
+  - A continuación se muestra un primer mapa conceptual que representa los principales conceptos que deberá tener la ontología, que describe el dominio de certificación energética de edificios denominado como CEE.
+    Para llevarlo a cabo, se ha tenido en cuenta las preguntas de competencia y la especificación de requisitos detallados en los apartados anteriores:
 
+       
+    
+    
+    
 ### 2.5. Transformación de datos
 
 
