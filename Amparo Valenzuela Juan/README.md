@@ -49,23 +49,23 @@ La frecuencia de actualización de los datos es diaria, por lo que en la descarg
 |Localidad|string|localidad del edificio|no hay datos|
 |CP|string|código postal del edificio|contiene vacíos|
 |Provincia|string|provincia del edificio|no hay datos|
-|Zona|string|zona del edificio|contiene vacíos|
+|Zona|string|zona climática del edificio|contiene vacíos|
 |AnioConstruccion|integer|anyo de construcción del edificio|contiene vacíos, datos en string, y anyos ilógicos|
-|NormativaVigente|string|normativa vigente|contiene vacíos, datos ilógicos|
+|NormativaVigente|string|normativa vigentenormativa vigente (construcción/rehabilitación)|contiene vacíos, datos ilógicos|
 |ReferenciaCatastral|string|referencia catastral|contiene vacíos|
 |TipoDeEdificio|string|tipo del vivienda|contiene vacíos, datos con valor -1|
-|Procedimiento|string|procedimiento certificación|contiene vacíos|
-|Fecha|date|fecha edificación|contiene vacíos|
+|Procedimiento|string|procedimiento reconocido de calificación energética utilizado y versión|contiene vacíos|
+|Fecha|date|fecha realizada certificación energética del edificio|contiene vacíos|
 |SuperficieHabitable|numeric|superficie habitable de la vivienda|no hay datos|
 |PorcentajeSuperficieHabitableCalefactada|numeric|porcentaje de superficie habitada con calefacción|no hay datos|
 |PorcentajeSuperficieHabitableRefrigerada|numeric|porcentaje de superficie habitada con aire acondicionado|no hay datos|
 |PorcentajeSuperficieHabitableAcristalada|numeric|porcentaje de superficie habitada acristalada|no hay datos|
 |DemandaDiariaACS|numeric|demanda diaria ACS (agua caliente sanitaria)|no hay datos|
-|GeneradoresCalefaccion|string|generadores de calefacción|contiene vacíos; conjunto datos clasificados con Nombre: ;Tipo: ; Pot.Nominal: 0; RendimientoEst.: 0; Vec.Energetico: ; ModoObtencion:|
-|GeneradoresRefrigeracion|string|generadores de refigeración|contiene vacíos;conjunto datos clasificados con Nombre: ;Tipo: ; Pot.Nominal: 0; RendimientoEst.: 0; Vec.Energetico: ; ModoObtencion:|
-|InstalacionesACS|string|instalaciones ACS (agua caliente sanitaria)|contiene vacíos;conjunto datos clasificados con Nombre: ;Tipo: ; Pot.Nominal: 0; RendimientoEst.: 0; Vec.Energetico: ; ModoObtencion:|
-|SistemasTermicos|string|sistemas térmicos|contiene vacíos; conjunto datos clasificados con Nombre: ;Cons.Fin.Calefaccion: ; Cons.Fin.Refrigeracion: ; Cons.Fin.ACS.: ; DemandaACS: |
-|SistemasElectricos|string|sistemas eléctricos|contiene vacíos; conjunto datos clasificados con Nombre: ;Ener.Gen.Autoconsumida:|
+|GeneradoresCalefaccion|string|generadores de calefacción|contiene vacíos; característica energética del edificio con Nombre: ;Tipo: ; Pot.Nominal: 0; RendimientoEst.: 0; Vec.Energetico: ; ModoObtencion:|
+|GeneradoresRefrigeracion|string|generadores de refigeración|contiene vacíos;característica energética del edificio con Nombre: ;Tipo: ; Pot.Nominal: 0; RendimientoEst.: 0; Vec.Energetico: ; ModoObtencion:|
+|InstalacionesACS|string|instalaciones ACS (agua caliente sanitaria)|contiene vacíos;característica energética del edificio con Nombre: ;Tipo: ; Pot.Nominal: 0; RendimientoEst.: 0; Vec.Energetico: ; ModoObtencion:|
+|SistemasTermicos|string|sistemas térmicos|contiene vacíos; característica energética del edificio con Nombre: ;Cons.Fin.Calefaccion: ; Cons.Fin.Refrigeracion: ; Cons.Fin.ACS.: ; DemandaACS: |
+|SistemasElectricos|string|sistemas eléctricos|contiene vacíos; característica energética del edificio con Nombre: ;Ener.Gen.Autoconsumida:|
 |PotenciaTotalInstalada|decimal|potencia total instalada|contiene vacíos; valores positivos|
 |Nombre|string|nombre de la contribución energética|contiene vacíos|
 |ConsumoFinalCalefaccion|decimal|consumo final de la calefacción|contiene vacíos; valores positivos|
@@ -136,32 +136,30 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
         
       |Identificador|Pregunta Competecia|Posible respuestas|                  
       | --- | --- | --- |
-      |PC1|¿Tipo de edificio?|Edificio: existente, terminado, proyecto, nuevo proyecto, nuevo terminado, terminado, reformado/ampliación (proyecto), reformado/ampliación (terminado)|
-      |PC2|¿Código registro comunidad autónoma?|2023/822297|
-      |PC3|¿Anyo construcción?|1993|
-      |PC4|¿Normativa vigente?|NBE-CT-79|
-      |PC5|¿Tipo de vivienda?|alquiler, compra-venta|
-      |PC6|¿Procedimiento que aplica?|CE3X|
-      |PC7|¿Generadores Calefacción?|Nombre: Caldera Individual Gas;Tipo: Caldera Estándar; Pot.Nominal: 24.00; RendimientoEst.: 0.62; Vec.Energetico: GasNatural; ModoObtencion: Estimado |
-      |PC8|¿Generadores Refrigeración?|Nombre: ;Tipo: ; Pot.Nominal: 0; RendimientoEst.: 0; Vec.Energetico: ; ModoObtencion:  |
-      |PC9|¿Instalación?|Nombre: Caldera Individual Gas;Tipo: Caldera Estándar; Pot.Nominal: 24.00; RendimientoEst.: 0.62; Vec.Energetico: GasNatural; ModoObtencion: Estimado |  
-      |PC10|¿Sistemas Térmicos?|Nombre: ;Cons.Fin.Calefaccion: 0; Cons.Fin.Refrigeracion: 0; Cons.Fin.ACS.: 0; DemandaACS: 0 |
-      |PC11|¿Sistemas eléctricos?|Nombre: ;Ener.Gen.Autoconsumida: 0 |
-     
+      |PC1|¿Identificación del edificio?|Nombre, dirección, municipio, zona climática, normativa vigente, referencia catastral, CP, anyo construcción, tipo de edificio|
+      |PC2|¿Datos técnicos?|procedimiento reconocido de calificación energética, fecha certificación energética del edificio|
+      |PC3|¿Calificación energética obtenida?|consumo de energía primaria no renobable, emisiones CO2|
+      |PC4|¿Características energéticas del edificio?|instalaciones térmicas (generadores de calefacción y refrigeración), instalaciones ACS, energía térmica y eléctrica|
+      |PC5|¿Calificación energética del edificio en emisiones?|indicador global, indicador parcial (calefacción, refrigeración, ACS, iluminación), emisiones CO2 por consumo eléctrico, emisiones CO2 por otros combustibles|
+      |PC6|¿Calificación energética del edificio en consumo de energía primaria no renovable?|indicador global, indicador parcial (calefacción, refrigeración, ACS, iluminación)|
+      |PC7|¿Calificación parcial de la demanda energética de calefacción y refrigeración?|demanda de calefacción y demanda de refrigeración|
+      |PC8|¿Calificación energética global?|consumo de energía primaria no renoable, emisiones de CO2|
+      |PC9|¿Calificación energética parcial?|demanda de calefacción, demanda de refrigeración|
+ 
 * Extracción de términos:
    - Se extrae terminología relacionada con la certificación energética en edificios para su mejor entendimiento:  
 
       |Término|Concepto|Sinónimo|                  
       | --- | --- | --- |
-      |Generador|Productor|
-      |Sistema térmico|Estructura de calor|
-      |Sistema eléctrico|Estructura eléctrica|
-      |Gas natural|Metano|
-      |Gas C|Gasóleo de calefacción|
-      |GLP|Gas licuado de petróleo|
-      |Biomasa|Bioenergía|
-      |Biocarburante|Biocombustible|
-      |ACS|Agua caliente sanitaria|
+      |Generador|Característica energética|Productor
+      |Sistema térmico|Característica energética|Estructura de calor|
+      |Sistema eléctrico|Característica energética|Estructura eléctrica|
+      |Gas natural||Metano|
+      |Gas C||Gasóleo de calefacción|
+      |GLP||Gas licuado de petróleo|
+      |Biomasa||Bioenergía|
+      |Biocarburante||Biocombustible|
+      |ACS||Agua caliente sanitaria|
     
 * Conceptualización:
   - A continuación se muestra un primer mapa conceptual que representa los principales conceptos que deberá tener la ontología, que describe el dominio de certificación energética de edificios denominado como CEE.
