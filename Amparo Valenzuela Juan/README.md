@@ -118,10 +118,10 @@ Se define la estragia de nombrado tanto para recursos Web como entidades fuera d
 * Elección del dominio de las URIs:
   - Dominio: http//CEE.es/ 
 * Elección ruta de las URIs:
-  - Ruta para términos ontológicos: http//CEE.es/datosgob/ontology/CerificacionEnergeticaEdificio#
+  - Ruta para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergetica#
   - Ruta para individuos: http//CEE.es/datosgob/resource/
 * Elección patrones para clases, propiedades e individuos:
-  - Patrón para términos ontológicos: http//CEE.es/datosgob/ontology/CerificacionEnergeticaEdificio#tieneValorCalificacion
+  - Patrón para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergetica#obtieneCalificacion
   - Patrón para individuos: http//CEE.es/datosgob/resource/CodEdificio/127475
 
 ### 2.4. Desarrollo del vocabulario
@@ -138,29 +138,30 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
       | --- | --- | --- |
       |PC1|¿Identificación del edificio?|Nombre, dirección, municipio, zona climática, normativa vigente, referencia catastral, CP, anyo construcción, tipo de edificio|
       |PC2|¿Datos técnicos?|procedimiento reconocido de calificación energética, fecha certificación energética del edificio|
-      |PC3|¿Calificación energética obtenida?|consumo de energía primaria no renobable, emisiones CO2|
-      |PC4|¿Características energéticas del edificio?|instalaciones térmicas (generadores de calefacción y refrigeración), instalaciones ACS, energía térmica y eléctrica|
-      |PC5|¿Calificación energética del edificio en emisiones?|indicador global, indicador parcial (calefacción, refrigeración, ACS, iluminación), emisiones CO2 por consumo eléctrico, emisiones CO2 por otros combustibles|
-      |PC6|¿Calificación energética del edificio en consumo de energía primaria no renovable?|indicador global, indicador parcial (calefacción, refrigeración, ACS, iluminación)|
-      |PC7|¿Calificación parcial de la demanda energética de calefacción y refrigeración?|demanda de calefacción y demanda de refrigeración|
-      |PC8|¿Calificación energética global?|consumo de energía primaria no renoable, emisiones de CO2|
-      |PC9|¿Calificación energética parcial?|demanda de calefacción, demanda de refrigeración|
- 
+      |PC3|¿Características energéticas del edificio?|instalaciones térmicas (generadores de calefacción y refrigeración), instalaciones ACS, energía térmica y eléctrica|
+      |PC3|¿Calificación energética?|Cal.Obtenida, Cal.Emisiones, Cal.Consumo, Cal.Parcial demanda, Cal.Global, Cal.Parcial|
+      |PC4|¿Indicadores energéticos?|Consumo energía final, consumo energía primaria no renovable, emisiones CO2, demanda|
+      |PC5|¿Resultados?|A, B, C, D, E, F, G|
+      
 * Extracción de términos:
    - Se extrae terminología relacionada con la certificación energética en edificios para su mejor entendimiento:  
 
-      |Término|Concepto|Sinónimo|                  
-      | --- | --- | --- |
-      |Generador|Característica energética|Productor
-      |Sistema térmico|Característica energética|Estructura de calor|
-      |Sistema eléctrico|Característica energética|Estructura eléctrica|
-      |Gas natural||Metano|
-      |Gas C||Gasóleo de calefacción|
-      |GLP||Gas licuado de petróleo|
-      |Biomasa||Bioenergía|
-      |Biocarburante||Biocombustible|
-      |ACS||Agua caliente sanitaria|
-    
+      |Término|Concepto|                 
+      | --- | --- |
+      |Indicador Global de Emisiones|Es la letra o calificación del inmueble (letras entre D y E).|
+      |Instalación térmica|Para producción de agua caliente y producción de calefacción o frío.|
+      |Calificación Energética del Edificio|Se expresa en términos de dióxido de carbono liberado a la atmósfera como consecuencia del consumo energético del mismo.|
+      |Calificación Parcial del Consumo de Energía Primaria|Energía consumida por el edificio procedente de fuentes renovables y no renovables que no ha sufrido ningún proceso de conversión o transformación.|
+      |Calificación energética A|Muy alto nivel de eficiencia, consumo energético 55% inferior a la media.|
+      |Calificación energética B|Consumo energético entre 55% y 75%.|
+      |Calificación energética C|Consumo energético entre 75% y 90%.|
+      |Calificación energética D|Consumo energético entre 90% y 100%.|
+      |Calificación energética E|Consumo energético entre 100% y 110%.|
+      |Calificación energética F|Consumo energético entre 110% y 125%.|
+      |IPE|Consumo global de energía primaria. Se mide en Kw/m2*año.|
+      |kWh/m2|Indica la cantidad de energía que es necesario consumir para vivir en esa casa de forma confortable.|
+      |Kg de CO2|La energía, aunque no provenga de la quema de combustibles, conlleva una emisión de gases y contaminantes. Por cada kilo de combustible se emite un número determinado de kilos de CO2, lo mismo pasa con la generación de la electricidad, por cada kWh se emiten un número de gramos de CO2.| 
+         
 * Conceptualización:
   - A continuación se muestra un primer mapa conceptual que representa los principales conceptos que deberá tener la ontología, que describe el dominio de certificación energética de edificios denominado como CEE.
     Para llevarlo a cabo, se ha tenido en cuenta las preguntas de competencia y la especificación de requisitos detallados en los apartados anteriores:
