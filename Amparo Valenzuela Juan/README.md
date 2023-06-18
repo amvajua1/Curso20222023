@@ -121,10 +121,10 @@ Se define la estragia de nombrado tanto para recursos Web como entidades fuera d
   - Ruta para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergetica#
   - Ruta para individuos: http//CEE.es/datosgob/resource/
 * Elección patrones para clases, propiedades e individuos:
-  - Patrón para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergetica#obtieneCalificacion
-  - Patrón para individuos: http//CEE.es/datosgob/resource/CodEdificio/127475
+  - Patrón para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergetica#tieneTipoEnergia
+  - Patrón para individuos: http//CEE.es/datosgob/resource/codEdificio/127475
 
-### 2.4. Desarrollo del vocabulario
+### 2.4. Desarrollo del vocabulario (en construcción)
 
 El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacerla demasiado extensa. En primer lugar se define la especificación de requisitos que satisface los requisitos no funcionales y funcionales:
 * Especificación de requisitos:
@@ -137,11 +137,10 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
       |Identificador|Pregunta Competecia|Posible respuestas|                  
       | --- | --- | --- |
       |PC1|¿Identificación del edificio?|Nombre, dirección, municipio, zona climática, normativa vigente, referencia catastral, CP, anyo construcción, tipo de edificio|
-      |PC2|¿Datos técnicos?|procedimiento reconocido de calificación energética, fecha certificación energética del edificio|
+      |PC2|¿Datos técnicos certificación energética?|procedimiento reconocido de calificación energética, fecha certificación energética del edificio|
       |PC3|¿Características energéticas del edificio?|instalaciones térmicas (generadores de calefacción y refrigeración), instalaciones ACS, energía térmica y eléctrica|
       |PC3|¿Calificación energética?|Cal.Obtenida, Cal.Emisiones, Cal.Consumo, Cal.Parcial demanda, Cal.Global, Cal.Parcial|
-      |PC4|¿Indicadores energéticos?|Consumo energía final, consumo energía primaria no renovable, emisiones CO2, demanda|
-      |PC5|¿Resultados?|A, B, C, D, E, F, G|
+      |PC4|¿Tipo energía edificio?|carbón, biomasa, electricidad Peninsular, biomasa pellet, GLP|
       
 * Extracción de términos:
    - Se extrae terminología relacionada con la certificación energética en edificios para su mejor entendimiento:  
@@ -166,7 +165,9 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
   - A continuación se muestra un primer mapa conceptual que representa los principales conceptos que deberá tener la ontología, que describe el dominio de certificación energética de edificios denominado como CEE.
     Para llevarlo a cabo, se ha tenido en cuenta las preguntas de competencia y la especificación de requisitos detallados en los apartados anteriores:
 
-       
+     <img width="388" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/7acd57b9-0204-420b-84d4-53385f9b7149">
+
+  
     
     
     
