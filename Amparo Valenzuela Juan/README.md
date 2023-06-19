@@ -141,6 +141,7 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
       |PC3|¿Características energéticas del edificio?|instalaciones térmicas (generadores de calefacción y refrigeración), instalaciones ACS, energía térmica y eléctrica|
       |PC3|¿Calificación energética?|Cal.Obtenida, Cal.Emisiones, Cal.Consumo, Cal.Parcial demanda, Cal.Global, Cal.Parcial|
       |PC4|¿Tipo energía edificio?|carbón, biomasa, electricidad Peninsular, biomasa pellet, GLP|
+      |PC5|¿Consumo energético?|Global: 193.00;Calefacción: 150.38;Refrigeración: 0.00;ACS: ;Iluminación: 0.00|
       
 * Extracción de términos:
    - Se extrae terminología relacionada con la certificación energética en edificios para su mejor entendimiento:  
@@ -165,10 +166,24 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
   - A continuación se muestra un primer mapa conceptual que representa los principales conceptos que deberá tener la ontología, que describe el dominio de certificación energética de edificios denominado como CEE.
     Para llevarlo a cabo, se ha tenido en cuenta las preguntas de competencia y la especificación de requisitos detallados en los apartados anteriores:
 
-     <img width="388" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/7acd57b9-0204-420b-84d4-53385f9b7149">
+     <img width="390" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/3610b7ff-ef59-45d6-9571-bca54dd9e634">
 
-  
-    
+  - Dominios y conceptos clave:
+
+     |Entidad|Atributo|Relación                 
+     | --- | --- |--- |
+     |CertificacionEnergetica|procedimiento, fechaCertif|- Una certicación energética pertenece a un edificio (perteneceEdificio)|
+     |Edificio|codEdificio, tipo, codRegistroComAutonoma, direccion, cp, zonaClimatica, anyoConstruccio, normativaVigente, referenciaCatastral, tipoEdificio|- Un edificio tiene características energéticas (tieneCaracEnergeticas). - Un edificio tiene certificación energética (tieneCertificacion).|
+     |Caracteristicas||- Es clase de las subclases: Energia, Instalacion. - Una característica energética tiene un tipo de energía (tieneTipoenergia)|
+     |Energia|nombre, tipo, descripción||
+     |Instalacion|nombre, tipo, descripción|| 
+     |TipoEnergia|tipo|- Un tipo de energía tiene consumo (tieneConsumo).|
+     |Consumo|nombre, consumo|- Un consumo de un tipo de energía tiene calificación (tieneCalificacion).|  
+     |Calificacion||- Es clase de las subclases: CalificaEnePrinNoRenov, CalificaEnergia, CalificaDemanad, CalificaEmiCO2. - Una calificación energética pertenece a una certificación energética del edificio (perteneceCertificacion).||
+     |CalificaEnePrinNoRenov|nombre, escala, calEnePrinNoRenovACS, calEnePrinNoRenovCalefaccion, calEnePrinNoRenovGlobal, calEnePrinNoRenovIluminacion, calEnePrinNoRenovRefrigeracion||
+     |CalificaDemanda|nombre, escala, calDemandaCalefaccion, calDemandaRefrigeracion||
+     |CalificaEmiCO2|nombre, escala, calEmiCO2Iluminacion, calEmiCO2ACS, calEmiCO2Refrigeracion, calEmiCO2Calefaccion, calEmiCO2Global||
+     |CalificaEnergetica|nombre, energiaPrimNoRenov, emisionesCO2||
     
     
 ### 2.5. Transformación de datos
