@@ -174,18 +174,33 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
      | --- | --- |--- |
      |CertificacionEnergetica|procedimiento, fechaCertif|- Una certicación energética pertenece a un edificio (perteneceEdificio)|
      |Edificio|codEdificio, tipo, codRegistroComAutonoma, direccion, cp, zonaClimatica, anyoConstruccio, normativaVigente, referenciaCatastral, tipoEdificio|- Un edificio tiene características energéticas (tieneCaracEnergeticas). - Un edificio tiene certificación energética (tieneCertificacion).|
-     |Caracteristicas||- Es clase de las subclases: Energia, Instalacion. - Una característica energética tiene un tipo de energía (tieneTipoenergia)|
-     |Energia|nombre, tipo, descripción||
-     |Instalacion|nombre, tipo, descripción|| 
+     |Caracteristicas|- Es clase de las subclases: Energia, Instalacion.|- Una característica energética tiene un tipo de energía (tieneTipoenergia)|
+     |Energia|nombre, tipo, descripción|- Una característica energética tiene un tipo de energía (tieneTipoenergia)|
+     |Instalacion|nombre, tipo, descripción|- Una característica energética tiene un tipo de energía (tieneTipoenergia)| 
      |TipoEnergia|tipo|- Un tipo de energía tiene consumo (tieneConsumo).|
      |Consumo|nombre, consumo|- Un consumo de un tipo de energía tiene calificación (tieneCalificacion).|  
-     |Calificacion||- Es clase de las subclases: CalificaEnePrinNoRenov, CalificaEnergia, CalificaDemanad, CalificaEmiCO2. - Una calificación energética pertenece a una certificación energética del edificio (perteneceCertificacion).||
-     |CalificaEnePrinNoRenov|nombre, escala, calEnePrinNoRenovACS, calEnePrinNoRenovCalefaccion, calEnePrinNoRenovGlobal, calEnePrinNoRenovIluminacion, calEnePrinNoRenovRefrigeracion||
-     |CalificaDemanda|nombre, escala, calDemandaCalefaccion, calDemandaRefrigeracion||
-     |CalificaEmiCO2|nombre, escala, calEmiCO2Iluminacion, calEmiCO2ACS, calEmiCO2Refrigeracion, calEmiCO2Calefaccion, calEmiCO2Global||
-     |CalificaEnergetica|nombre, energiaPrimNoRenov, emisionesCO2||
-    
-    
+     |Calificacion|- Es clase de las subclases: CalificaEnePrinNoRenov, CalificaEnergia, CalificaDemanad, CalificaEmiCO2.|- Una calificación energética pertenece a una certificación energética del edificio (perteneceCertificacion).|
+     |CalificaEnePrinNoRenov|nombre, escala, calEnePrinNoRenovACS, calEnePrinNoRenovCalefaccion, calEnePrinNoRenovGlobal, calEnePrinNoRenovIluminacion, calEnePrinNoRenovRefrigeracion|- Una calificación energética pertenece a una certificación energética del edificio (perteneceCertificacion).|
+     |CalificaDemanda|nombre, escala, calDemandaCalefaccion, calDemandaRefrigeracion|- Una calificación energética pertenece a una certificación energética del edificio (perteneceCertificacion).|
+     |CalificaEmiCO2|nombre, escala, calEmiCO2Iluminacion, calEmiCO2ACS, calEmiCO2Refrigeracion, calEmiCO2Calefaccion, calEmiCO2Global|- Una calificación energética pertenece a una certificación energética del edificio (perteneceCertificacion).|
+     |CalificaEnergetica|nombre, energiaPrimNoRenov, emisionesCO2|- Una calificación energética pertenece a una certificación energética del edificio (perteneceCertificacion).|
+
+* Búsqueda de ontologías:
+   - Para el dominio de certificaciones energéticas, se realizó una búsqueda exhaustiva de recursos que se están utilizando en la Linked Data Cloud, en el repositorio [LOV](https://lov.linkeddata.es/dataset/lov/vocabs). Se realizó una búsqueda de los siguientes
+   términos: certificate, energy, building, qualification. Se encontraron las siguientes ontologías que posteriormente se analizaron: bot, saref, dco, esco.
+
+* Ontologías encontradas en el repositorio [LOV](https://lov.linkeddata.es/dataset/lov/vocabs):
+   - [Building Topology Ontology (bot)](https://w3c-lbd-cg.github.io/bot/): Es una ontología para describir los conceptos topológicos centrales de un edificio.
+   - [SAREF extension for building (saref4bldg)](https://saref.etsi.org/saref4bldg/v1.1.2/#s4bldg:HeatExchanger): Esta ontología amplía la ontología SAREF para el dominio de la construcción al definir los dispositivos de construcción y cómo se ubican en un edificio.
+   - [European Skills, Competences, qualifications and Occupations (esco)](https://ec.europa.eu/esco/lod/static/model.html): La ontología de la taxonomía "Habilidades, competencias, cualificaciones y ocupaciones europeas". La ontología considera tres pilares ESCO (o taxonomía) y 2 registros. Los tres pilares son: - Ocupación - Habilidad (y competencias) - Cualificación
+   - [Ontology dco](https://www.dco.domos-project.eu/#crossreference): Ontología que define dispositivos en diferentes entornos.
+
+* Selección de las ontologías de dominio:
+   - La ontología _bot_ define el area por zonas de un edificio, por lo que se decide no reutilizarla. La ontología _SAREF_ sí que se encuentran entidades de características energéticas como el generador eléctrico, como objetos físicos o dispositivos en un edificio, pero se centra en la definición más que en el consumo. La ontología _esco_ no tiene ninguna entidad que se ajuste para ser reutilizada y la ontología _dco_ tiene clases muy interesantes como Gas, Gas boiler, pero tras cargar la ontología en Protégé y verla con detalle, no se ha visto la necesidad de su reutilización:
+
+     <img width="175" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/90ae79d5-9b80-4d00-9aa3-3a19e12ac252">
+
+     
 ### 2.5. Transformación de datos
 
 
