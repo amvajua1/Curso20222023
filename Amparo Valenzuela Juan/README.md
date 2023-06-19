@@ -199,8 +199,22 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
    - La ontología _bot_ define el area por zonas de un edificio, por lo que se decide no reutilizarla. La ontología _SAREF_ sí que se encuentran entidades de características energéticas como el generador eléctrico, como objetos físicos o dispositivos en un edificio, pero se centra en la definición más que en el consumo. La ontología _esco_ no tiene ninguna entidad que se ajuste para ser reutilizada y la ontología _dco_ tiene clases muy interesantes como Gas, Gas boiler, pero tras cargar la ontología en Protégé y verla con detalle, no se ha visto la necesidad de su reutilización:
 
      <img width="175" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/90ae79d5-9b80-4d00-9aa3-3a19e12ac252">
-
      
+* Implementación de la ontología:
+  - Para la implementación de la ontología en el dominio de certificación energéticas de un edificio se ha utilizado la herramienta [Protégé versión 5.6.1](https://protege.stanford.edu/software.php), desarrollada por el grupo Stanford Medical Informatics de la universidad de Stanford en colaboración con la Universidad de Manchester.
+  - La ontología se ha guardado como OntoCEE, y la siguiente imagen muestra el gráfico de la misma, diseñada desde del tab OntoGraf:
+    <img width="488" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/91f65ccc-1f68-4d60-8a87-64200a21a72a">
+    
+  - Taxonomía. La jerarquía de las clases en la ontología se visualiza en la siguiente imagen:
+    
+    <img width="170" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/be885b9f-02a4-4793-aa57-f89c6dff2318">
+
+* Evaluación de la ontología:
+  - Se evalúa la ontología con la aplicación [OOPS!](https://oops.linkeddata.es/) haciendo Scanner by RDF, y el resultado es el siguiente:
+    <img width="455" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/3bc4b969-9064-4e09-bd3c-5c315bd201ea">
+
+
+    
 ### 2.5. Transformación de datos
 
 
