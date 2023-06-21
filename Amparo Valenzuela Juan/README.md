@@ -223,7 +223,17 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
   -  El pitfall P22 tiene importancia baja y no es necesario resolverlo, por lo que se da como válido.
     
 ### 2.5. Transformación de datos
+La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para dar soporte a la transformación es _OpenRefine_:
+- Se cargan los datos:
 
+<img width="957" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/d4fc45d5-3ef9-444e-8997-c8ad84725f3f">
+
+- Se transforman las columnas _AnioConstruccion_ y _CP_, que están como texto y son números:
+<img width="771" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/dd9665af-dd47-4bc9-a5d7-7681e56edc04">
+
+- Se eliminan las columnas: __Localidad, SuperficieHabitable, PorcentajeSuperficieHabitableCalefactada,  PorcentajeSuperficieHabitableRefrigerada, PorcentajeSuperficieHabitableAcristalada, DemandaDiariaACS, ReduccionGlobalEnergiaPrimariaNoRenovable, Global, Calefaccion, Refrigeracion, ACS, ElectricidadBaleares, ElectricidadCanarias, ElectricidadCeutayMelilla__  que no tienen valor 
+
+  
 
 ### 2.6. Enlazado
 
