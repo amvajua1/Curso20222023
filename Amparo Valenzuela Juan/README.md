@@ -212,8 +212,15 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
 * Evaluación de la ontología:
   - Se evalúa la ontología con la aplicación [OOPS!](https://oops.linkeddata.es/) haciendo Scanner by RDF, y el resultado es el siguiente:
     <img width="455" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/3bc4b969-9064-4e09-bd3c-5c315bd201ea">
+  - Se re-evalúa la ontología y se resuelven gran parte de los pitfalls:
 
+    <img width="623" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/8ad390e4-c02c-49bf-ac63-323d3bdfc921">
 
+  -  El error _P41:No license declared_ persiste. Se investiga cómo resolverlo, y se encuentra la solución que consiste en declarar una anotación con dcterms:license, pero tras probarlo, el problema persiste en OOPS!. Se validan otras ontologías con OOPS! tales como dogont.rdf y persoon.rdf, pero también aparece el P41 pese a tener las anotaciones de licencia, por lo que se decide crear una issue en Github para comentarlo con el resto de usuarios y compartir el problema.
+    
+    <img width="476" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/2c52f060-7094-4718-addb-9e90f90cc982">
+
+  -  El pitfall P22 tiene importancia baja y no es necesario resolverlo, por lo que se da como válido.
     
 ### 2.5. Transformación de datos
 
