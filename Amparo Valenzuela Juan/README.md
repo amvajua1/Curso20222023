@@ -235,7 +235,8 @@ La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para
 - Se eliminan las columna que no se va a informar: _id
 - Como los datos son de la provincia de Navarra, se añade manualmente el valor de la columna _Provincia_ que no tiene datos.
 - Existen columnas con datos anidadados como _GeneradoresCalefaccion_ pero no se va hacer un Split sobre ellas ya que hay mucha informacion y se interpreta como descripción del recursol.
-- Se renombran las columnas _Nombre_ por _NombreSistemaTérmico_ y _Nombre1_ por _NombreSistemaElectrico_
+- Se renombran las columnas _Nombre_ por _NombreSistemaTermico_ y _Nombre1_ por _NombreSistemaElectrico_.
+- Se cambia a numérico las siguientes columnas: _PotenciaTotalInstalada, ConsumoFinalCalefaccion, ConsumoFinalRefrigeracion, ConsumoFinalACS, DemandaACS, EnergiaGeneradaAutoconsumida_.
   
 
 ### 2.6. Enlazado
