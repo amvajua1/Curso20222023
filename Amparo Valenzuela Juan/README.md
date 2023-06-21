@@ -67,12 +67,12 @@ La frecuencia de actualización de los datos es diaria, por lo que en la descarg
 |SistemasTermicos|string|sistemas térmicos|contiene vacíos; característica energética del edificio con Nombre: ;Cons.Fin.Calefaccion: ; Cons.Fin.Refrigeracion: ; Cons.Fin.ACS.: ; DemandaACS: |
 |SistemasElectricos|string|sistemas eléctricos|contiene vacíos; característica energética del edificio con Nombre: ;Ener.Gen.Autoconsumida:|
 |PotenciaTotalInstalada|decimal|potencia total instalada|contiene vacíos; valores positivos|
-|Nombre|string|nombre de la contribución energética|contiene vacíos|
+|Nombre|string|nombre sistema térmico|contiene vacíos|
 |ConsumoFinalCalefaccion|decimal|consumo final de la calefacción|contiene vacíos; valores positivos|
 |ConsumoFinalRefrigeracion|decimal|consumo final de refigeración|contiene vacíos; valores positivos|
 |ConsumoFinalACS|decimal|consumo final ACS (agua caliente sanitaria)|contiene vacíos; valores positivos|
 |DemandaACS|decimal|demanda ACS (agua caliente sanitaria)|contiene vacíos; valores positivos|
-|Nombre1|string|nombre de la contribución energética|contiene vacíos|
+|Nombre1|string|nombre sistema eléctrico|contiene vacíos|
 |EnergiaGeneradaAutoconsumida|decimal|energía general de autoconsumo|contiene vacíos; valores positivos|
 |ReduccionGlobalEnergiaPrimariaNoRenovable|decimal|reducción global de energía primaria no renovable|contiene vacíos; valores positivos|
 |Global|numeric|en general|no hay datos|
@@ -231,8 +231,10 @@ La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para
 - Se transforman las columnas _AnioConstruccion_ y _CP_, que están como texto y son números:
 <img width="771" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/dd9665af-dd47-4bc9-a5d7-7681e56edc04">
 
-- Se eliminan las columnas: __Localidad, SuperficieHabitable, PorcentajeSuperficieHabitableCalefactada,  PorcentajeSuperficieHabitableRefrigerada, PorcentajeSuperficieHabitableAcristalada, DemandaDiariaACS, ReduccionGlobalEnergiaPrimariaNoRenovable, Global, Calefaccion, Refrigeracion, ACS, ElectricidadBaleares, ElectricidadCanarias, ElectricidadCeutayMelilla__  que no tienen valor 
+- Se eliminan las columnas que no tienen valor: _Localidad, SuperficieHabitable, PorcentajeSuperficieHabitableCalefactada,  PorcentajeSuperficieHabitableRefrigerada, PorcentajeSuperficieHabitableAcristalada, DemandaDiariaACS, ReduccionGlobalEnergiaPrimariaNoRenovable, Global, Calefaccion, Refrigeracion, ACS, ElectricidadBaleares, ElectricidadCanarias, ElectricidadCeutayMelilla_ 
 
+- Se eliminan las columnas que no se van a informar: _id, PotenciaTotalInstalada, Nombre_
+- Como los datos son de la provincia de Navarra, se añade manualmente el valor de la columna _Provincia_ que no tiene datos. 
   
 
 ### 2.6. Enlazado
