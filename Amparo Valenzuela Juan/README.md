@@ -233,10 +233,14 @@ La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para
 - Se eliminan las columnas que no tienen valor: _Localidad, SuperficieHabitable, PorcentajeSuperficieHabitableCalefactada,  PorcentajeSuperficieHabitableRefrigerada, PorcentajeSuperficieHabitableAcristalada, DemandaDiariaACS, ReduccionGlobalEnergiaPrimariaNoRenovable, Global, Calefaccion, Refrigeracion, ACS, ElectricidadBaleares, ElectricidadCanarias, ElectricidadCeutayMelilla_ 
 
 - Se eliminan las columna que no se va a informar: _id
-- Como los datos son de la provincia de Navarra, se añade manualmente el valor de la columna _Provincia_ que no tiene datos.
-- Existen columnas con datos anidadados como _GeneradoresCalefaccion_ pero no se va hacer un Split sobre ellas ya que hay mucha informacion y se interpreta como descripción del recursol.
+- Como los datos son de la provincia de _Navarra_, se añade manualmente el valor de la columna _Provincia_ que no tiene datos.
+- Existen columnas con datos anidadados como _GeneradoresCalefaccion_ pero no se va hacer un Split sobre ellas ya que hay mucha informacion y se interpreta como descripción del recurso.
 - Se renombran las columnas _Nombre_ por _NombreSistemaTermico_ y _Nombre1_ por _NombreSistemaElectrico_.
 - Se cambia a numérico las siguientes columnas: _PotenciaTotalInstalada, ConsumoFinalCalefaccion, ConsumoFinalRefrigeracion, ConsumoFinalACS, DemandaACS, EnergiaGeneradaAutoconsumida_.
+- Se eliminan las filas que tienen datos incompletos y no son coherentes. Para obtener las filas, se hace un facet sobre las columnas de calificación energética que no pueden estar vacías. En total tras realizar la limpieza de datos, se ha quedado con un total de 6010 filas de 78.511 registros que se habían cargado inicialmente, quedando fuera 72.510 con datos inconsistentes:
+  
+  <img width="953" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/d9a7e1e3-00bb-422f-a035-7772798e57cf">
+
   
 
 ### 2.6. Enlazado
