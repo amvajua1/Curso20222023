@@ -287,6 +287,8 @@ Para darle un valor añadido a los datos y poder así enriquecer la información
 
     <img width="259" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/7bee3d69-2fa4-48a9-a03e-2f88cbed6037">
 
+### 2.7. Publicación
+
 
       
 
