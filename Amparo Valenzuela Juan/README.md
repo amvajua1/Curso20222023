@@ -124,7 +124,7 @@ Se define la estragia de nombrado tanto para recursos Web como entidades fuera d
   - Patrón para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergeticaCEE#<term_name>
   - Patrón para individuos: http//CEE.es/datosgob/resource/<resource_name>
 
-### 2.4. Desarrollo del vocabulario (en construcción)
+### 2.4. Desarrollo del vocabulario
 
 El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacerla demasiado extensa. En primer lugar se define la especificación de requisitos que satisface los requisitos no funcionales y funcionales:
 * Especificación de requisitos:
@@ -261,5 +261,13 @@ Se va a transformar la fuente de datos escogida y analizada en los apartados ant
   
 
 ### 2.6. Enlazado
+
+Para darle un valor añadido a los datos y poder así enriquecer la información del dominio, se enlazan los datos csv con otros datos externos, obteniendo así, otras vías para explorar más información. Para ello, para realizar la reconcialiación o enlace entre ambas fuentes de datos se utiliza la herramienta _OpenRefine_.
+
+- Identificación de enlaces con otros conjuntos de datos en las columnas del dataset. Como se trata de buscar información en otra fuente de datos, se descartan aquellas columnas que sean valores numéricos, valores como el tipo de edificio o su dirección. Por lo que, se buscan valores genéricos como nombres de ciudades, nombres de países.
+
+  
+
+
 
 
