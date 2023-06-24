@@ -240,7 +240,7 @@ La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para
 - Se eliminan las filas que tienen datos incompletos y no son coherentes. Para obtener las filas, se hace un facet sobre las columnas de calificación energética que no pueden estar vacías. En total tras realizar la limpieza de datos, se ha quedado con un total de 6010 filas de 78.511 registros que se habían cargado inicialmente, quedando fuera 72.510 con datos inconsistentes:
   
   <img width="953" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/d9a7e1e3-00bb-422f-a035-7772798e57cf">
-- Se tienen problemas a la hora de codificar los caracteres 'ñ' y acentos, por lo que en una primera instancia se tratan desde 'Custom text transform on colum...' y se utiliza la expresión value.reinterpret('UTF-8','ISO-8859-1') entre diferentes combinaciones pero sin éxito. Finalmente se soluciona exportando los datos, codificando a ANSI desde Notepad y volviendo a importar los datos para continuar con su transformación, quedando de la siguiente forma:
+- Se tienen problemas a la hora de codificar los caracteres 'ñ' y acentos, por lo que en una primera instancia se tratan desde 'Custom text transform on colum...' y se utiliza la expresión value.reinterpret('UTF-8','ISO-8859-1') entre diferentes combinaciones pero sin éxito. Finalmente se soluciona exportando los datos, codificando a ANSI desde Notepad y volviendo a importar los datos para continuar con su transformación, quedando de la siguiente forma (se adjunta proyecto en la carpeta ProyectoOpenRefine):
 
 <img width="947" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/55742fba-2038-47b7-ad57-f0ae39925d58">
 
