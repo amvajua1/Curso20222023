@@ -266,15 +266,22 @@ Para darle un valor añadido a los datos y poder así enriquecer la información
 
 - Identificación de enlaces con otros conjuntos de datos en las columnas del dataset:
   - Como se trata de buscar información en otra fuente de datos, se descartan aquellas columnas que sean valores numéricos, valores como el tipo de edificio o su dirección. Por lo que, se buscan valores genéricos como nombres de ciudades, nombres de países. La columna que se ajusta a dichas carcterísticas para ser candidata en ser enlazada con otra fuentes de datos es la columan que informa de la _Provincia_ de la certificación energética de los edificios.
+ 
+- Enlace de datos:
   - Desde la aplicación _OpenRefine_ se realiza el cotejo de la columna _Provincia_ con [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.) una base de datos de conocimiento libre y abierto:
 
     <img width="464" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/ac79beba-ee01-4674-a5d5-c473611e031e">
+  - Tras realizar el cotejo, la columna queda enlazada con la información que proporciona _Wikidata_:
 
-    - Tras realizar el cotejo, la columna queda enlazada con la información que proporciona _Wikidata_:
+      <img width="151" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/c84852ee-affa-4087-bf84-437d0d2268c9">
+      
+- Información extra proporcionada desde el item [_chartered community (Q3297051)_](https://www.wikidata.org/wiki/Q3297051) de _Wikidata_:
 
-      <img width="52" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/02f42809-1c08-49f0-8490-6e82aba3762c">
+   <img width="773" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/22d99137-b578-4f05-a926-6f83e9d0b63d">
 
-      <img width="860" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/de85ac85-ae4a-4718-ba22-89d00cf95a3d">
+- Nueva columna informando de la uri a partir de la columna enlazada _Provincia_:
+  - 
+      
 
       
 
