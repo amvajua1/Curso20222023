@@ -244,7 +244,12 @@ La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para
 
 <img width="947" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/55742fba-2038-47b7-ad57-f0ae39925d58">
 
-  
+- También es posible la codificación al crear el proyecto en _OpenRefine_:
+
+<img width="396" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/42bb29a5-6bb5-4bfa-aa3e-fe67846d8a38">
+
+
+    
   
 
 ### 2.6. Enlazado
