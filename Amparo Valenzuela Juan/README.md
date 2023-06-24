@@ -248,8 +248,16 @@ La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para
 
 <img width="396" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/42bb29a5-6bb5-4bfa-aa3e-fe67846d8a38">
 
+- Extensión RDF
 
-    
+<img width="404" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/33ede172-4ad9-4fbf-aafb-72615806419d">
+
+
+<img width="406" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/d05b4614-5fec-4e19-8641-8214d9b3f71c">
+
+- Resultado final tras la exportación del fichero _RDF/XML_ se muestra una imagen del primer registro de datos, se adjunta fichero en la carpeta _ExportRDF_:
+  
+  <img width="724" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/2eb89664-04f4-49e1-8712-99191fc9bf26">
   
 
 ### 2.6. Enlazado
