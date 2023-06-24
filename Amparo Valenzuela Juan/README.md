@@ -279,7 +279,7 @@ Para darle un valor añadido a los datos y poder así enriquecer la información
 
    <img width="773" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/22d99137-b578-4f05-a926-6f83e9d0b63d">
 
-- Nueva columna informando de la uri a partir de la columna enlazada _Provincia_:
+- Nueva columna informando de la _URI_ a partir de la columna enlazada _Provincia_:
   - Se crea la columna _WikiDataProvincia_ a partir de la columna _Provincia_ informando de la URI:
 
     <img width="369" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/f683c3b1-636a-48c8-beb0-fb47cdd3431c">
