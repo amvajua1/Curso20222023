@@ -1,4 +1,4 @@
-# Certificaciones energéticas de edificios
+# **_Certificación energética de edificios_**
 
 1. Introducción
 2. Proceso de transformación:
@@ -118,11 +118,11 @@ Se define la estragia de nombrado tanto para recursos Web como entidades fuera d
 * Elección del dominio de las URIs:
   - Dominio: http//CEE.es/ 
 * Elección ruta de las URIs:
-  - Ruta para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergetica#
+  - Ruta para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergeticaCEE#
   - Ruta para individuos: http//CEE.es/datosgob/resource/
 * Elección patrones para clases, propiedades e individuos:
-  - Patrón para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergetica#tieneTipoEnergia
-  - Patrón para individuos: http//CEE.es/datosgob/resource/codEdificio/127475
+  - Patrón para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergeticaCEE#<term_name>
+  - Patrón para individuos: http//CEE.es/datosgob/resource/<resource_name>
 
 ### 2.4. Desarrollo del vocabulario (en construcción)
 
@@ -223,7 +223,7 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
   -  El pitfall P22 tiene importancia baja y no es necesario resolverlo, por lo que se da como válido.
     
 ### 2.5. Transformación de datos
-La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para dar soporte a la transformación es _OpenRefine_:
+Se va a transformar la fuente de datos escogida y analizada en los apartados anteriores en formato _RDF_. La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para dar soporte a la transformación es [_OpenRefine_](https://openrefine.org/docs/manual/expressions#grel-general-refine-expression-language):
 - Se cargan los datos:
 <img width="957" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/d4fc45d5-3ef9-444e-8997-c8ad84725f3f">
 
@@ -248,14 +248,14 @@ La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para
 
 <img width="396" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/42bb29a5-6bb5-4bfa-aa3e-fe67846d8a38">
 
-- Extensión RDF
+- Extensión RDF utilizada en _OpenRefine_ para definir el mapeo del esquema de los datos y la ontología creada en el apartado 2.4 y realizar la transformación en formato _RDF_:
 
 <img width="404" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/33ede172-4ad9-4fbf-aafb-72615806419d">
 
 
 <img width="406" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/d05b4614-5fec-4e19-8641-8214d9b3f71c">
 
-- Resultado final tras la exportación del fichero _RDF/XML_ se muestra una imagen del primer registro de datos, se adjunta fichero en la carpeta _ExportRDF_:
+- Resultado final tras la exportación del fichero _RDF/XML_. Se muestra una imagen del primer registro de datos. Se adjunta fichero en la carpeta _ExportRDF_:
   
   <img width="724" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/2eb89664-04f4-49e1-8712-99191fc9bf26">
   
