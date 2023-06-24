@@ -202,7 +202,7 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
      
 * Implementación de la ontología:
   - Para la implementación de la ontología en el dominio de certificación energéticas de un edificio se ha utilizado la herramienta [Protégé versión 5.6.1](https://protege.stanford.edu/software.php), desarrollada por el grupo Stanford Medical Informatics de la universidad de Stanford en colaboración con la Universidad de Manchester.
-  - La ontología se ha guardado como OntoCEE, y la siguiente imagen muestra el gráfico de la misma, diseñada desde del tab OntoGraf:
+  - La ontología se ha guardado como _ontoCEE_, y la siguiente imagen muestra el gráfico de la misma, diseñada desde del tab OntoGraf:
     <img width="488" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/91f65ccc-1f68-4d60-8a87-64200a21a72a">
     
   - Taxonomía. La jerarquía de las clases en la ontología se visualiza en la siguiente imagen:
@@ -265,10 +265,10 @@ Se va a transformar la fuente de datos escogida y analizada en los apartados ant
 Para darle un valor añadido a los datos y poder así enriquecer la información del dominio, se enlazan los datos csv con otros datos externos, obteniendo así, otras vías para explorar más información. Para ello, para realizar la reconcialiación, cotejo o enlace entre ambas fuentes de datos se utiliza la herramienta _OpenRefine_.
 
 - Identificación de enlaces con otros conjuntos de datos en las columnas del dataset:
-  - Como se trata de buscar información en otra fuente de datos, se descartan aquellas columnas que sean valores numéricos, valores como el tipo de edificio o su dirección. Por lo que, se buscan valores genéricos como nombres de ciudades, nombres de países. La columna que se ajusta a dichas carcterísticas para ser candidata en ser enlazada con otra fuentes de datos es la columan que informa de la _Provincia_ de la certificación energética de los edificios.
+  - Como se trata de buscar información en otra fuente de datos, se descartan aquellas columnas que sean valores numéricos, valores como el tipo de edificio o su dirección. Por lo que, se buscan valores genéricos como nombres de ciudades, nombres de países. La columna que se ajusta a dichas carcterísticas para ser candidata en ser enlazada con otra fuente de datos es la columan que informa de la _Provincia_ de la certificación energética de los edificios.
  
 - Enlace de datos:
-  - Desde la aplicación _OpenRefine_ se realiza el cotejo de la columna _Provincia_ con [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.) una base de datos de conocimiento libre y abierto:
+  - Desde la aplicación _OpenRefine_ se realiza el cotejo de la columna _Provincia_ con [Wikidata](https://datos.gob.es/es/blog/wikidata-una-base-de-datos-de-conocimiento-libre-y-abierto#:~:text=%C2%BFQu%C3%A9%20es%20wikidata%3F,datos%20de%20otros%20repositorios%20digitales.), una base de datos de conocimiento libre y abierto:
 
     <img width="464" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/ac79beba-ee01-4674-a5d5-c473611e031e">
   - Tras realizar el cotejo, la columna queda enlazada con la información que proporciona _Wikidata_:
@@ -280,7 +280,14 @@ Para darle un valor añadido a los datos y poder así enriquecer la información
    <img width="773" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/22d99137-b578-4f05-a926-6f83e9d0b63d">
 
 - Nueva columna informando de la uri a partir de la columna enlazada _Provincia_:
-  - 
+  - Se crea la columna _WikiDataProvincia_ a partir de la columna _Provincia_ informando de la URI:
+
+    <img width="369" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/f683c3b1-636a-48c8-beb0-fb47cdd3431c">
+    
+
+    <img width="259" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/7bee3d69-2fa4-48a9-a03e-2f88cbed6037">
+
+
       
 
       
