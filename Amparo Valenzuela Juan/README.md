@@ -216,7 +216,7 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
 
     <img width="623" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/8ad390e4-c02c-49bf-ac63-323d3bdfc921">
 
-  -  El error _P41:No license declared_ persiste. Se investiga cómo resolverlo, y se encuentra la solución que consiste en declarar una anotación con dcterms:license, pero tras probarlo, el problema persiste en OOPS!. Se validan otras ontologías con OOPS! tales como dogont.rdf y persoon.rdf, pero también aparece el P41 pese a tener las anotaciones de licencia, por lo que se decide crear una issue en Github para comentarlo con el resto de usuarios y compartir el problema.
+  -  El error _P41:No license declared_ persiste. Se investiga cómo resolverlo, y se encuentra la solución que consiste en declarar una anotación con dcterms:license, pero tras probarlo, el problema persiste en OOPS!. Se validan otras ontologías con OOPS! tales como dogont.rdf y persoon.rdf, pero también aparece el P41 pese a tener las anotaciones de licencia, por lo que se decide crear una [issue](https://github.com/AEPIA-WebSemanticaDatosEnlazados/Curso20222023/issues/13) en Github para comentarlo con el resto de usuarios y compartir el problema.
     
     <img width="476" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/2c52f060-7094-4718-addb-9e90f90cc982">
 
@@ -289,7 +289,7 @@ Para darle un valor añadido a los datos y poder así enriquecer la información
 
 ### 2.7. Publicación
 
-Como los datos se actualizan diariamente, se procede con la publicación. El inconveniente es que en el proceso de publicación da el error: ... _request to https://api.datahub.io/auth/check? ](https://api.datahub.io/auth/check?jwt=&next=http://localhost:3000 failed, reason: certificate has expired_ y los datos no se han podido publicar desde [DataHub.io](https://datahub.io/). Se reportan todos lo pasos que se han seguido y se crea una issue para compartir el problema.
+Como los datos se actualizan diariamente, se procede con la publicación. El inconveniente es que en el proceso de publicación da el error: ... _request to https://api.datahub.io/auth/check? ](https://api.datahub.io/auth/check?jwt=&next=http://localhost:3000 failed, reason: certificate has expired_ y los datos no se han podido publicar desde [DataHub.io](https://datahub.io/). Se reportan todos lo pasos que se han seguido y se crea una [issue](https://github.com/AEPIA-WebSemanticaDatosEnlazados/Curso20222023/issues/16) en Github para compartir el problema.
 
 Los pasos que se han llevado a cabo han sido los siguientes:
 
