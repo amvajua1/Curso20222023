@@ -289,6 +289,25 @@ Para darle un valor añadido a los datos y poder así enriquecer la información
 
 ### 2.7. Publicación
 
+Como los datos se actualizan diariamente, se procede con la publicación. El inconveniente es que en el proceso de publicación da el error: ... _request to https://api.datahub.io/auth/check? ](https://api.datahub.io/auth/check?jwt=&next=http://localhost:3000 failed, reason: certificate has expired_ y los datos no se han podido publicar desde [DataHub.io](https://datahub.io/). Se reportan todos lo pasos que se han seguido y se crea una issue para compartir el problema.
+
+Los pasos que se han llevado a cabo han sido los siguientes:
+
+1. Acceso a [DataHub.io](https://datahub.io/) y de ahí a [OLD DataHub](https://old.datahub.io/) para crear una cuenta.
+2. Creación de una cuenta con mi usuario y acceso al contenido:
+
+   <img width="499" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/fd1f2938-7df3-4940-a213-d92dadf035f9">
+
+3. Descarga e instalación de la herramienta [data](https://datahub.io/docs/features/data-cli),lectura de la [documentación](https://github.com/datopian/data-cli/blob/master/docs/push.md) y los [pasos](https://discuss.okfn.org/t/creating-a-dataset-on-the-datahub/1627) a seguir para la publicación de los datos:
+   
+   <img width="339" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/01cb1478-6a76-481a-84a4-570e0d860174">
+
+5. Error al ejecutar el comando _data login_:
+
+   <img width="666" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/7fbb19bb-6174-432b-9d9b-5be6b60ca98d">
+
+   
+
 
       
 
