@@ -306,7 +306,9 @@ Los pasos que se han llevado a cabo han sido los siguientes:
 
    <img width="666" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/7fbb19bb-6174-432b-9d9b-5be6b60ca98d">
 
-## 3. Aplicación y explotación
+## 3. Aplicación y explotación (en construcción)
+
+
 
 
 
