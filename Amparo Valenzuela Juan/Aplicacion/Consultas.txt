@@ -1,0 +1,91 @@
+Consulta 1 - Para el edificio con código 127485, obtener los datos y la calificación energética en emisiones CO2:
+
+PREFIX onto: <http://www.ontotext.com/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ontoS:<http://127.0.0.1;3333/CEE.es/datosgob/resource/>
+PREFIX ontoP:<http://CEE.es/datosgob/ontology/CertificacionEnergeticaCEE#>
+SELECT ?anyoConstruccion ?normativaVigente ?referenciaCatastral ?tipoEdificio ?codRegistroComAutonoma ?direccion ?municipio ?zonaClimatica 
+?procedimiento ?fechaCertif ?perteneceEdificio ?perteneceCertificacion ?calEmiCO2ACS ?calEmiCO2Calefaccion
+WHERE {
+   ontoS:Edificio_127485 ontoP:anyoConstruccion ?anyoConstruccion  .
+   ontoS:Edificio_127485 ontoP:normativaVigente ?normativaVigente  .
+   ontoS:Edificio_127485 ontoP:referenciaCatastral ?referenciaCatastral  .
+   ontoS:Edificio_127485 ontoP:tipoEdificio ?tipoEdificio  .
+   ontoS:Edificio_127485 ontoP:codRegistroComAutonoma ?codRegistroComAutonoma  .
+   ontoS:Edificio_127485 ontoP:direccion ?direccion  .
+   ontoS:Edificio_127485 ontoP:municipio ?municipio  .
+   ontoS:Edificio_127485 ontoP:zonaClimatica ?zonaClimatica  .
+   ontoS:CertificacionEnergetica_127485 ontoP:procedimiento ?procedimiento  .
+   ontoS:CertificacionEnergetica_127485 ontoP:fechaCertif ?fechaCertif  .
+   ontoS:CertificacionEnergetica_127485 ontoP:perteneceEdificio ?perteneceEdificio  .
+   ontoS:CalificaEmiCO2_0 ontoP:perteneceCertificacion ?perteneceCertificacion  .
+   ontoS:CalificaEmiCO2_0 ontoP:calEmiCO2ACS ?calEmiCO2ACS  .
+   ontoS:CalificaEmiCO2_0 ontoP:calEmiCO2Calefaccion ?calEmiCO2Calefaccion  .
+
+} 
+
+Consulta 2 - Para los edificios con año de construcción 2023, obtener los distintos tipos de calificación energética, de acuerdo con el tipo de energia del edificio:
+
+PREFIX onto: <http://www.ontotext.com/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ontoS:<http://127.0.0.1;3333/CEE.es/datosgob/resource/>
+PREFIX ontoP:<http://CEE.es/datosgob/ontology/CertificacionEnergeticaCEE#>
+SELECT  DISTINCT ?Edificio ?anyoConstruccion ?zonaClimatica ?perteneceEdificio ?procedimiento ?fechaCertif ?tieneTipoEnergia ?tipoElectricidadPeninsular ?emisionesCO2 ?energiaPrimNoRenove ?calEnePrinNoRenovGlobal ?calDemandaCalefaccion ?calEmiCO2Calefaccion
+WHERE {
+   ?Edificio a ontoS:Edificio .
+   ?Edificio ontoP:anyoConstruccion ?anyoConstruccion .
+   ?Edificio ontoP:zonaClimatica ?zonaClimatica .
+   ?Edificio ontoP:tipoEdificio ?perteneceEdificio .
+   ?CertificacionEnergetica ontoP:perteneceEdificio ?perteneceEdificio .
+   ?CertificacionEnergetica ontoP:procedimiento  ?procedimiento .
+   ?CertificacionEnergetica ontoP:fechaCertif  ?fechaCertif .
+   ?Caracteristica ontoP:perteneceEdificio ?perteneceEdificio .
+   ?Caracteristica ontoP:tieneTipoEnergia  ?tieneTipoEnergia .
+   ?TipoEnergia ontoP:tieneCaracEnergeticas ?tieneTipoEnergia .
+   ?TipoEnergia ontoP:tipoElectricidadPeninsular ?tipoElectricidadPeninsular .
+   ?Consumo ontoP:perteneceCaracteristicas ?tieneTipoEnergia .
+   ?CalificacionEnergetica ontoP:perteneceCertificacion ?perteneceEdificio .
+   ?CalificacionEnergetica ontoP:emisionesCO2 ?emisionesCO2 .
+   ?CalificacionEnergetica ontoP:energiaPrimNoRenove ?energiaPrimNoRenove .
+   ?CalificaEnePrinNoRenov ontoP:perteneceCertificacion ?perteneceEdificio .
+   ?CalificaEnePrinNoRenov ontoP:calEnePrinNoRenovGlobal ?calEnePrinNoRenovGlobal .
+   ?CalificaDemanda ontoP:perteneceCertificacion ?perteneceEdificio .
+   ?CalificaDemanda ontoP:calEnePrinNoRenovGlobal ?calDemandaCalefaccion .
+   ?CalificaEmiCO2 ontoP:perteneceCertificacion ?perteneceEdificio .
+   ?CalificaEmiCO2 ontoP:calEmiCO2Calefaccion ?calEmiCO2Calefaccion .
+   
+
+  FILTER (?anyoConstruccion='2023')
+} order by ?Edificio
+LIMIT 20
+
+
+Consulta 3 - Obtener códigos de edificios con una calificación de energia principal no renovable en calefaccion de tipo A y E:
+
+PREFIX onto: <http://www.ontotext.com/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ontoS:<http://127.0.0.1;3333/CEE.es/datosgob/resource/>
+PREFIX ontoP:<http://CEE.es/datosgob/ontology/CertificacionEnergeticaCEE#>
+SELECT  DISTINCT  ?perteneceEdificio ?calEnePrinNoRenovCalefaccion
+WHERE {
+  
+   ?CertificacionEnergetica ontoP:perteneceEdificio ?perteneceEdificio .
+   ?CertificacionEnergetica ontoP:procedimiento  ?procedimiento .
+   ?CertificacionEnergetica ontoP:fechaCertif  ?fechaCertif .
+   ?CalificaEnePrinNoRenov ontoP:perteneceCertificacion ?perteneceEdificio .
+   ?CalificaEnePrinNoRenov ontoP:calEnePrinNoRenovCalefaccion ?calEnePrinNoRenovCalefaccion .
+   
+
+  FILTER (?calEnePrinNoRenovCalefaccion='A' || ?calEnePrinNoRenovCalefaccion='E' )
+} order by ?perteneceEdificio
+LIMIT 200
+
