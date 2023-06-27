@@ -221,7 +221,8 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
     <img width="476" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/2c52f060-7094-4718-addb-9e90f90cc982">
 
   -  El pitfall P22 tiene importancia baja y no es necesario resolverlo, por lo que se da como válido.
-    
+
+ **Nota:**Se adjunta la ontologia desarrollada en la carpeta del repositorio [_ontoCEE_](https://github.com/AEPIA-WebSemanticaDatosEnlazados/Curso20222023/tree/main/Amparo%20Valenzuela%20Juan/ontoCEE)   
 ### 2.5. Transformación de datos
 Se va a transformar la fuente de datos escogida y analizada en los apartados anteriores en formato _RDF_. La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para dar soporte a la transformación es [_OpenRefine_](https://openrefine.org/docs/manual/expressions#grel-general-refine-expression-language):
 - Se cargan los datos:
@@ -323,7 +324,19 @@ Para la llevar a cabo la aplicación y explotación del dataset _CertificadosEne
 
 ## 4. Conclusiones (en construcción)
 
+
+
 ## 5. Bibliografía (en construcción)
+- [Cómo interpretar el certificado energético](https://apuntoarquitectura.com/como-interpretar-el-certificado-energetico/)
+- [Certificación energética - Documentación](https://energia.gob.es/desarrollo/EficienciaEnergetica/CertificacionEnergetica/Documentos/Documentos%20informativos/2022_Informe-seguimiento.pdf)
+- [Normativa eficencia energética](https://energia.gob.es/desarrollo/EficienciaEnergetica/CertificacionEnergetica/DocumentosReconocidos/normativamodelosutilizacion/2015_06_22_Nuevo-Modelo-Certificado-Eficiencia-Energetica-Version-Web-vacio.pdf)
+- Metodología NeOn [Suárez-Figueroa, 2012]
+- Malaysian_Food_Composition_Ontology_Evaluation.pdf
+- [dcmi-terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/license)
+- [OpenRefine - Documentación](https://openrefine.org/docs/manual/expressions#grel-general-refine-expression-language)
+- [Publicación Datahub](http://okfnlabs.org/blog/2016/07/25/publish-data-packages-to-datahub-ckan.html)
+- [data - Tutorial](http://okfnlabs.org/blog/2016/07/25/publish-data-packages-to-datahub-ckan.html)
+- [GNOSS](https://nextweb.gnoss.com/recurso/tutorial-how-to-publish-linked-data-on-the-web--/df7dc39b-a4f4-4b8d-aef5-be36f35414c5)
 - [Apache Jena Fuseki - Documentación](https://jena.apache.org/documentation/fuseki2/)
 - [SPARQL- Documentación](https://www.w3.org/TR/rdf-sparql-query/)     
 
