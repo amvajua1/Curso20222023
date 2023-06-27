@@ -307,7 +307,7 @@ Los pasos que se han llevado a cabo han sido los siguientes:
 
    <img width="666" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/7fbb19bb-6174-432b-9d9b-5be6b60ca98d">
 
-## 3. Aplicación y explotación (en construcción)
+## 3. Aplicación y explotación
 
 Para la llevar a cabo la aplicación y explotación del dataset _CertificadosEnergeticosEdificios.csv_ transformado en _CertificadosEnergeticosEdificios_trans_conv.rdf_, desarrollado en los apartados anteriores, se ha utilizado la herramienta de uso libre [Apache Jena Fuseki](https://jena.apache.org/download/index.cgi), por ser compatible con el framework [Jena](https://jena.apache.org/) y de simple implementación. En ella se han llevado a cabo consultas en el lenguaje de consulta [SPARQL](https://www.w3.org/TR/rdf-sparql-query/) para la aplicación y explotación de los datos:
 
@@ -328,7 +328,7 @@ Tal y como se ha visto en la aplicación, con los datos enlazados facilita al us
 
 
 
-## 5. Bibliografía (en construcción)
+## 5. Bibliografía 
 - [Cómo interpretar el certificado energético](https://apuntoarquitectura.com/como-interpretar-el-certificado-energetico/)
 - [Certificación energética - Documentación](https://energia.gob.es/desarrollo/EficienciaEnergetica/CertificacionEnergetica/Documentos/Documentos%20informativos/2022_Informe-seguimiento.pdf)
 - [Normativa eficencia energética](https://energia.gob.es/desarrollo/EficienciaEnergetica/CertificacionEnergetica/DocumentosReconocidos/normativamodelosutilizacion/2015_06_22_Nuevo-Modelo-Certificado-Eficiencia-Energetica-Version-Web-vacio.pdf)
@@ -342,8 +342,14 @@ Tal y como se ha visto en la aplicación, con los datos enlazados facilita al us
 - [Apache Jena Fuseki - Documentación](https://jena.apache.org/documentation/fuseki2/)
 - [SPARQL- Documentación](https://www.w3.org/TR/rdf-sparql-query/)     
 
-      
+## 6. Fuente de datos
 
+Los ficheros con los datos utilizados en la memoria y generados se distribuyen de la siguiente forma:
+- Carpeta Aplicacion -> resultado de las consultas (Consulta1.csv, Consulta2.csv, Consulta3.csv) y código en Consultas.txt
+- Carpeta Dataset -> datos seleccionados csv
+- Carpeta ProyectoOpenRefine -> proyectos exportados de OpenRefine tras la transformación de los datos y extensión en RDF.
+- Carpeta TrasDataset -> fichero de datos trasnformado y con extensión RDF y TURTLE.
+- Carpeta ontoCEE -> ontologia creada en Prótége 5.0.
 
 
   
