@@ -319,6 +319,7 @@ Para la llevar a cabo la aplicación y explotación del dataset _CertificadosEne
 - Consulta 3 - Obtener códigos de edificios con una calificación de energia principal no renovable en calefaccion de tipo A y E:
 <img width="916" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/7dcf8f24-f082-4ca2-a278-7a3db1f72fc1">
 
+**Nota:** El código de las consultas y sus resultados se dejan en el repositorio dentro de la carpeta _Aplicacion_.
 
 ## 4. Conclusiones (en construcción)
 
