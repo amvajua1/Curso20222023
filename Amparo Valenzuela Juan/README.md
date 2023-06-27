@@ -308,12 +308,15 @@ Los pasos que se han llevado a cabo han sido los siguientes:
 
 ## 3. Aplicación y explotación (en construcción)
 
+Para la llevar a cabo la aplicación y explotación del dataset _CertificadosEnergeticosEdificios.csv_ transformado en _CertificadosEnergeticosEdificios_trans_conv.rdf_, desarrollado en los apartados anteriores, se ha utilizado la herramienta de uso libre [Apache Jena Fuseki](https://jena.apache.org/download/index.cgi), por ser compatible con el framework [Jena](https://jena.apache.org/) y de simple implementación. En ella se han llevado a cabo consultas en el lenguaje de consulta [SPARQL]( para la aplicación y explotación de los datos:
 
 
 
+## 4. Conclusiones (en construcción)
 
-
-      
+## 5. Bibliografía (en construcción)
+- [Apache Jena Fuseki - Documentación](https://jena.apache.org/documentation/fuseki2/)
+- [SPARQL](https://www.w3.org/TR/rdf-sparql-query/)     
 
       
 
