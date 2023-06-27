@@ -240,7 +240,7 @@ Se va a transformar la fuente de datos escogida y analizada en los apartados ant
 - Se eliminan las filas que tienen datos incompletos y no son coherentes. Para obtener las filas, se hace un facet sobre las columnas de calificación energética que no pueden estar vacías. En total tras realizar la limpieza de datos, se ha quedado con un total de 6010 filas de 78.511 registros que se habían cargado inicialmente, quedando fuera 72.510 con datos inconsistentes:
   
   <img width="953" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/d9a7e1e3-00bb-422f-a035-7772798e57cf">
-- Se tienen problemas a la hora de codificar los caracteres 'ñ' y acentos, por lo que en una primera instancia se tratan desde 'Custom text transform on colum...' y se utiliza la expresión value.reinterpret('UTF-8','ISO-8859-1') entre diferentes combinaciones pero sin éxito. Finalmente se soluciona exportando los datos, codificando a ANSI desde Notepad y volviendo a importar los datos para continuar con su transformación, quedando de la siguiente forma (se adjunta proyecto en la carpeta ProyectoOpenRefine):
+- Se tienen problemas a la hora de codificar los caracteres 'ñ' y acentos, por lo que en una primera instancia se tratan desde 'Custom text transform on colum...' y se utiliza la expresión value.reinterpret('UTF-8','ISO-8859-1') entre diferentes combinaciones pero sin éxito. Finalmente se soluciona exportando los datos, codificando a ANSI desde Notepad y volviendo a importar los datos para continuar con su transformación, quedando de la siguiente forma (**se adjunta proyecto en la carpeta [_ProyectoOpenRefine_](https://github.com/AEPIA-WebSemanticaDatosEnlazados/Curso20222023/tree/main/Amparo%20Valenzuela%20Juan/ProyectoOpenRefine)**):
 
 <img width="947" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/55742fba-2038-47b7-ad57-f0ae39925d58">
 
@@ -255,7 +255,7 @@ Se va a transformar la fuente de datos escogida y analizada en los apartados ant
 
 <img width="406" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/d05b4614-5fec-4e19-8641-8214d9b3f71c">
 
-- Resultado final tras la exportación del fichero _RDF/XML_. Se muestra una imagen del primer registro de datos. Se adjunta fichero en la carpeta _ExportRDF_:
+- Resultado final tras la exportación del fichero _RDF/XML_. Se muestra una imagen del primer registro de datos. **Se adjunta fichero en la carpeta [_TransDataset_](https://github.com/AEPIA-WebSemanticaDatosEnlazados/Curso20222023/tree/main/Amparo%20Valenzuela%20Juan/TransDataset)**:
   
   <img width="724" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/2eb89664-04f4-49e1-8712-99191fc9bf26">
   
