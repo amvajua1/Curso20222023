@@ -322,6 +322,8 @@ Para la llevar a cabo la aplicación y explotación del dataset _CertificadosEne
 
 **Nota:** El código de las consultas y sus resultados se dejan en el repositorio dentro de la carpeta [_Aplicacion_](https://github.com/AEPIA-WebSemanticaDatosEnlazados/Curso20222023/tree/main/Amparo%20Valenzuela%20Juan/Aplicacion).
 
+Tal y como se ha visto en la aplicación, con los datos enlazados facilita al usuario, interesado en comprar o alquilar una vivienda, obtener la información de las certificaciones energéticas más relevante de entre todos los edificios de la provincia de Navarra. Como puede ser, obtener la dirección de aquellos edificios que se hayan construido en el 2020 con unas calificaciones energéticas aceptables para poder así, visitar sus viviendas desponibles en venta o en alquiler. Esto demuestra su gran potencial.
+
 ## 4. Conclusiones (en construcción)
 
 
