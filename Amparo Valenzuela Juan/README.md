@@ -308,15 +308,23 @@ Los pasos que se han llevado a cabo han sido los siguientes:
 
 ## 3. Aplicación y explotación (en construcción)
 
-Para la llevar a cabo la aplicación y explotación del dataset _CertificadosEnergeticosEdificios.csv_ transformado en _CertificadosEnergeticosEdificios_trans_conv.rdf_, desarrollado en los apartados anteriores, se ha utilizado la herramienta de uso libre [Apache Jena Fuseki](https://jena.apache.org/download/index.cgi), por ser compatible con el framework [Jena](https://jena.apache.org/) y de simple implementación. En ella se han llevado a cabo consultas en el lenguaje de consulta [SPARQL]( para la aplicación y explotación de los datos:
+Para la llevar a cabo la aplicación y explotación del dataset _CertificadosEnergeticosEdificios.csv_ transformado en _CertificadosEnergeticosEdificios_trans_conv.rdf_, desarrollado en los apartados anteriores, se ha utilizado la herramienta de uso libre [Apache Jena Fuseki](https://jena.apache.org/download/index.cgi), por ser compatible con el framework [Jena](https://jena.apache.org/) y de simple implementación. En ella se han llevado a cabo consultas en el lenguaje de consulta [SPARQL](https://www.w3.org/TR/rdf-sparql-query/) para la aplicación y explotación de los datos:
 
+- Consulta 1 - Para el edificio con código 127485, obtener los datos y la calificación energética en emisiones CO2:
+<img width="914" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/4f79260c-184d-478b-96a0-50b131fa12dc">
+
+- Consulta 2 - Para los edificios con año de construcción _2023_, obtener los distintos tipos de calificación energética, de acuerdo con el tipo de energia del edificio:
+<img width="930" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/2d100cfa-bf1f-42a1-912e-66301a02a83e">
+
+- Consulta 3 - Obtener códigos de edificios con una calificación de energia principal no renovable en calefaccion de tipo A y E:
+<img width="916" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/7dcf8f24-f082-4ca2-a278-7a3db1f72fc1">
 
 
 ## 4. Conclusiones (en construcción)
 
 ## 5. Bibliografía (en construcción)
 - [Apache Jena Fuseki - Documentación](https://jena.apache.org/documentation/fuseki2/)
-- [SPARQL](https://www.w3.org/TR/rdf-sparql-query/)     
+- [SPARQL- Documentación](https://www.w3.org/TR/rdf-sparql-query/)     
 
       
 
