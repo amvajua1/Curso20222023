@@ -116,13 +116,13 @@ Se define la estragia de nombrado tanto para recursos Web como entidades fuera d
 * Elección de la forma de las URIs:
   - Se utiliza el símbolo hash '#' para la redirección a un documento, con acceso completo a los datos. Y el símbolo slash '/' para la identificación de recursos que son dinámicos.
 * Elección del dominio de las URIs:
-  - Dominio: http//CEE.es/ 
+  - Dominio: http://CEE.es/ 
 * Elección ruta de las URIs:
-  - Ruta para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergeticaCEE#
-  - Ruta para individuos: http//CEE.es/datosgob/resource/
+  - Ruta para términos ontológicos: http://CEE.es/datosgob/ontology/CertificacionEnergeticaCEE#
+  - Ruta para individuos: http://CEE.es/datosgob/resource/
 * Elección patrones para clases, propiedades e individuos:
-  - Patrón para términos ontológicos: http//CEE.es/datosgob/ontology/CertificacionEnergeticaCEE#<term_name>
-  - Patrón para individuos: http//CEE.es/datosgob/resource/<resource_name>
+  - Patrón para términos ontológicos: http://CEE.es/datosgob/ontology/CertificacionEnergeticaCEE#<term_name>
+  - Patrón para individuos: http://CEE.es/datosgob/resource/<resource_name>
 
 ### 2.4. Desarrollo del vocabulario
 
