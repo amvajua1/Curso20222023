@@ -13,6 +13,7 @@
 3. Aplicación y explotación
 4. Conclusiones
 5. Bibliografía
+6. Fuente de datos
 
 ## 1. Introducción
 
@@ -332,7 +333,7 @@ Una vez seleccionado los datos, para su análisis y desarrollo de la ontología 
 
 El desarrollo de la ontología se ha llevado a cabo haciendo uso de la Metodología de Neón ya que te guía en los pasos que se han de realizar para llegar al objetivo final, teniendo en cuenta las buenas prácticas a seguir. El análisis de ontologías para reutilizar ha sido costoso y extenso, ya que existen muchas ontologías publicadas, y seleccionar la adecuada o cuál puede ser útil es una tarea tediosa. Sin embargo, una vez que las tienes localizadas te aprovechas de la ventaja propia de la reutilización, aunque aquí se ha tomado la decisión de no reutilizar. En la evaluación de la ontología, haciendo uso de la herramienta OOPS! ha aparecido el pitfall P41 que informa que la licencia tiene que declararse, pero, aun habiéndola declarado, el P41 persiste. 
 
-La herramienta OpenRefine es intuitiva de utilizar y dispone de muchas utilidades para transformas los datos y hacer la extensión RDF. Tiene mucho potencial y permite el enlazado de información de aquellos datos que son candidatos. Se ha comprobado que enriquece los datos muchísimo al compartir la información con otros datos enlazados que expresan más información para un mismo dato. 
+La herramienta OpenRefine es intuitiva de utilizar y dispone de muchas utilidades para transformar los datos y hacer la extensión RDF. Tiene mucho potencial y permite el enlazado de información de aquellos datos que son candidatos. Se ha comprobado que enriquece los datos muchísimo al compartir la información con otros datos enlazados que expresan más información para un mismo dato. 
 
 Como los datos se actualizan a diario se había decidido su publicación, pero he tenido problemas con DataHub.io y he creado una issue para compartir.
 
