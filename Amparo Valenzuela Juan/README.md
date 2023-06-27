@@ -222,7 +222,7 @@ El desarrollo ontológico a tratar sigue la metodología de NeOn, pero sin hacer
 
   -  El pitfall P22 tiene importancia baja y no es necesario resolverlo, por lo que se da como válido.
 
- **Nota:**Se adjunta la ontologia desarrollada en la carpeta del repositorio [_ontoCEE_](https://github.com/AEPIA-WebSemanticaDatosEnlazados/Curso20222023/tree/main/Amparo%20Valenzuela%20Juan/ontoCEE)   
+ **Nota:** Se adjunta la ontologia desarrollada en la carpeta del repositorio [_ontoCEE_](https://github.com/AEPIA-WebSemanticaDatosEnlazados/Curso20222023/tree/main/Amparo%20Valenzuela%20Juan/ontoCEE)   
 ### 2.5. Transformación de datos
 Se va a transformar la fuente de datos escogida y analizada en los apartados anteriores en formato _RDF_. La serialización elegida para RDF es _RDF-XML_ y la herramienta a utilizar para dar soporte a la transformación es [_OpenRefine_](https://openrefine.org/docs/manual/expressions#grel-general-refine-expression-language):
 - Se cargan los datos:
@@ -324,9 +324,21 @@ Para la llevar a cabo la aplicación y explotación del dataset _CertificadosEne
 
 Tal y como se ha visto en la aplicación, con los datos enlazados facilita al usuario, interesado en comprar o alquilar una vivienda, obtener la información de las certificaciones energéticas más relevante de entre todos los edificios de la provincia de Navarra. Como puede ser, obtener la dirección de aquellos edificios que se hayan construido en el 2020 con unas calificaciones energéticas aceptables para poder así, visitar sus viviendas desponibles en venta o en alquiler. Esto demuestra su gran potencial.
 
-## 4. Conclusiones (en construcción)
+## 4. Conclusiones
 
+A la hora de seleccionar los datos, se ha encontrado mucha variedad de información con licencia de libre uso, y actualizada diariamente a la que se puede acceder. Se ha observado que en las certificaciones energéticas, las comunidades autónomas hacen uso de campos diferentes a la hora de registrar sus datos en csv, por ejemplo Aragón registra las certificaciones energéticas de forma diferente que Navarra, aunque ambas expresan lo mismo, pero se concluye que haciendo uso de OpenRefine y transformando los datos se podrían complementar ambas. 
 
+Una vez seleccionado los datos, para su análisis y desarrollo de la ontología (conceptualización, entidades, propiedades, relaciones etc) surge la necesidad de entender bien los datos y su interpretación, en este caso relacionado con las certificaciones energéticas de los edificios, lo que conlleva bastante dedicación, pero a la vez se aprende mucho.
+
+El desarrollo de la ontología se ha llevado a cabo haciendo uso de la Metodología de Neón ya que te guía en los pasos que se han de realizar para llegar al objetivo final, teniendo en cuenta las buenas prácticas a seguir. El análisis de ontologías para reutilizar ha sido costoso y extenso, ya que existen muchas ontologías publicadas, y seleccionar la adecuada o cuál puede ser útil es una tarea tediosa. Sin embargo, una vez que las tienes localizadas te aprovechas de la ventaja propia de la reutilización, aunque aquí se ha tomado la decisión de no reutilizar. En la evaluación de la ontología, haciendo uso de la herramienta OOPS! ha aparecido el pitfall P41 que informa que la licencia tiene que declararse, pero, aun habiéndola declarado, el P41 persiste. 
+
+La herramienta OpenRefine es intuitiva de utilizar y dispone de muchas utilidades para transformas los datos y hacer la extensión RDF. Tiene mucho potencial y permite el enlazado de información de aquellos datos que son candidatos. Se ha comprobado que enriquece los datos muchísimo al compartir la información con otros datos enlazados que expresan más información para un mismo dato. 
+
+Como los datos se actualizan a diario se había decidido su publicación, pero he tenido problemas con DataHub.io y he creado una issue para compartir.
+
+En la aplicación y explotación de los datos se comprueba que el usuario que accede a los datos enlazados para un dominio en concreto puede manejar la información realizando consultas sin limitaciones y obtener información relevante y precisa.
+
+Con todo ello concluyo en que, los puntos tratados en la memoria han ilustrado los conceptos, buenas prácticas y ventajas del uso de los datos enlazados. Durante el desarrollo de la misma he aprendido y asentado los conceptos explicados en la parte teórica.
 
 ## 5. Bibliografía 
 - [Cómo interpretar el certificado energético](https://apuntoarquitectura.com/como-interpretar-el-certificado-energetico/)
