@@ -32,7 +32,7 @@ La certificación de eficiencia energética de un edificio es el proceso por el 
 asigna a cada edificio una clase energética de eficiencia, que va desde la clase A, para los edificios de menor consumo energético, a la clase G, para los menos eficientes. El Registro de certificados de eficiencia 
 energética de edificios ofrece información de las características energéticas de los edificios, para que los compradores y usuarios la tengan en cuenta a la hora de comprar o alquilar un edificio o vivienda.
 
-
+**Nota:** El Dataset descargado se deja en el repositorio, en la carpeta [Dataset](https://github.com/amvajua1/Curso20222023/tree/main-1/Amparo%20Valenzuela%20Juan/Dataset).
 ### 2.2. Análisis de los datos
 
 La licencia de los datos escogidos proviene de [Creative Commons Attribution License (cc-by)](http://www.opendefinition.org/licenses/cc-by), ésta permite la redistribución y la reutilización de una obra con licencia con la condición de que se acredite debidamente al creador. La licencia que utilizan es [CC-BY](https://creativecommons.org/choose/) con reconocimiento 4.0 internacional, de cultura libre, que permite compartir las adaptaciones de la obra y que permite usos comerciales. Por las características propias de la licencia, se utilizará la misma para los datos transformados. 
@@ -319,7 +319,7 @@ Para la llevar a cabo la aplicación y explotación del dataset _CertificadosEne
 - Consulta 3 - Obtener códigos de edificios con una calificación de energia principal no renovable en calefaccion de tipo A y E:
 <img width="916" alt="image" src="https://github.com/amvajua1/Curso20222023/assets/136450615/7dcf8f24-f082-4ca2-a278-7a3db1f72fc1">
 
-**Nota:** El código de las consultas y sus resultados se dejan en el repositorio dentro de la carpeta _Aplicacion_.
+**Nota:** El código de las consultas y sus resultados se dejan en el repositorio dentro de la carpeta [_Aplicacion_](https://github.com/amvajua1/Curso20222023/tree/main-1/Amparo%20Valenzuela%20Juan/Aplicacion).
 
 ## 4. Conclusiones (en construcción)
 
